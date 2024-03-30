@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.UserMapper">
+
+    <sql id="Base_Column_List">
+        id,username,password,name,avatar,role,age,sex,id_number,phone,account_address,account,available_funds,register_time,login_time,update_time,status
+    </sql>
+
+    <insert id="insert" parameterType="com.example.entity.User" useGeneratedKeys="true">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="username != null">username,</if>
+            <if test="password != null">password,</if>
+            <if test="name != null">name,</if>
+            <if test="avatar != null">avatar,</if>
+            <if test="role != null">role,</if>
+            <if test="age != null">age,</if>
+            <if test="sex != null">sex,</if>
+            <if test="phone != null">phone,</if>
+            <if test="accountAddress != null">account_address,</if>
+            <if test="account != null">account,</if>
+            <if test="availableFunds != null">available_funds,</if>
+            <if test="idNumber != null">id_number,</if>
+            <if test="registerTime != null">register_time,</if>
+            <if test="loginTime != null">login_time,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="status != null">status,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="username != null">#{username},</if>
+            <if test="password != null">#{password},</if>
+            <if test="name != null">#{name},</if>
+            <if test="avatar != null">#{avatar},</if>
+            <if test="role != null">#{role},</if>
+            <if test="age != null">#{age},</if>
+            <if test="sex != null">#{sex},</if>
+            <if test="phone != null">#{phone},</if>
+            <if test="accountAddress != null">#{accountAddress},</if>
+            <if test="account != null">#{account},</if>
+            <if test="availableFunds != null">#{availableFunds},</if>
+            <if test="idNumber != null">#{idNumber},</if>
+            <if test="registerTime != null">#{registerTime},</if>
+            <if test="loginTime != null">#{loginTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="status != null">#{status},</if>
+        </trim>
+    </insert>
+
+    <update id="updateById">
+        update user
+        <set>
+            <if test="username != null">
+                username = #{username},
+            </if>
+            <if test="password != null">
+                password = #{password},
+            </if>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="avatar != null">
+                avatar = #{avatar},
+            </if>
+            <if test="role != null">
+                role = #{role},
+            </if>
+            <if test="age != null">
+                age = #{age},
+            </if>
+            <if test="sex != null">
+                sex = #{sex},
+            </if>
+            <if test="phone != null">
+                phone = #{phone},
+            </if>
+            <if test="idNumber != null">
+                id_number = #{idNumber},
+            </if>
+            <if test="accountAddress != null">
+                account_address = #{accountAddress},
+            </if>
+            <if test="account != null">
+                account = #{account},
+            </if>
+            <if test="availableFunds != null">
+                available_funds = #{availableFunds},
+            </if>
+            <if test="loginTime != null">
+                login_time = #{loginTime},
+            </if>
+            <if test="registerTime != null">
+                register_time = #{registerTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+        </set>
+        where id = #{ id }
+    </update>
+
+    <delete id="deleteById">
+        update user from user
+        <set>>
+            <if test="status != null">
+                status = #{status},
+            </if>
+        </set>
+        where id = #{id}
+    </delete>
+
+    <select id="selectById" resultType="com.example.entity.User">
+        select * from user where id = #{id}
+    </select>
+
+    <select id="selectAll" resultType="com.example.entity.User">
+        select * from user
+        <where>
+            <if test="id != null"> and id= #{id}</if>
+            <if test="username != null"> and username like concat('%', #{username}, '%')</if>
+            <if test="name != null"> and name like concat('%', #{name}, '%')</if>
+            <if test="sex != null"> and sex  = #{ sex }</if>
+            and status != 4
+        </where>
+    </select>
+
+    <select id="selectByUsername" resultType="com.example.entity.User">
+        select * from user where username = #{username}
+    </select>
+
+</mapper>

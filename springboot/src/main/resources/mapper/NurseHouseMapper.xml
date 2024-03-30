@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.NurseHouseMapper">
+
+    <sql id="Base_Column_List">
+        id,name,price,img,address,count,tags,beds,nature,type,content,area,date,phone,longitude,latitude
+    </sql>
+
+    <select id="selectAll" resultType="com.example.entity.NurseHouse">
+        select
+        <include refid="Base_Column_List" />
+        from nurse_house
+        <where>
+            <if test="name != null"> and name like concat('%', #{name}, '%')</if>
+        </where>
+        order by id desc
+    </select>
+
+    <select id="selectById" resultType="com.example.entity.NurseHouse">
+        select
+        <include refid="Base_Column_List" />
+        from nurse_house
+        where id = #{id}
+    </select>
+
+    <delete id="deleteById">
+        delete from nurse_house
+        where  id = #{id}
+    </delete>
+
+    <insert id="insert" parameterType="com.example.entity.NurseHouse" useGeneratedKeys="true" keyProperty="id">
+        insert into nurse_house
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="name != null">name,</if>
+            <if test="price != null">price,</if>
+            <if test="img != null">img,</if>
+            <if test="address != null">address,</if>
+            <if test="count != null">count,</if>
+            <if test="tags != null">tags,</if>
+            <if test="beds != null">beds,</if>
+            <if test="nature != null">nature,</if>
+            <if test="type != null">type,</if>
+            <if test="content != null">content,</if>
+            <if test="area != null">area,</if>
+            <if test="date != null">date,</if>
+            <if test="phone != null">phone,</if>
+            <if test="longitude != null">longitude,</if>
+            <if test="latitude != null">latitude,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="name != null">#{name},</if>
+            <if test="price != null">#{price},</if>
+            <if test="img != null">#{img},</if>
+            <if test="address != null">#{address},</if>
+            <if test="count != null">#{count},</if>
+            <if test="tags != null">#{tags},</if>
+            <if test="beds != null">#{beds},</if>
+            <if test="nature != null">#{nature},</if>
+            <if test="type != null">#{type},</if>
+            <if test="content != null">#{content},</if>
+            <if test="area != null">#{area},</if>
+            <if test="date != null">#{date},</if>
+            <if test="phone != null">#{phone},</if>
+            <if test="longitude != null">#{longitude},</if>
+            <if test="latitude != null">#{latitude},</if>
+        </trim>
+    </insert>
+
+    <update id="updateById" parameterType="com.example.entity.NurseHouse">
+        update nurse_house
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="img != null">
+                img = #{img},
+            </if>
+            <if test="address != null">
+                address = #{address},
+            </if>
+            <if test="count != null">
+                count = #{count},
+            </if>
+            <if test="tags != null">
+                tags = #{tags},
+            </if>
+            <if test="beds != null">
+                beds = #{beds},
+            </if>
+            <if test="nature != null">
+                nature = #{nature},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="content != null">
+                content = #{content},
+            </if>
+            <if test="area != null">
+                area = #{area},
+            </if>
+            <if test="date != null">
+                date = #{date},
+            </if>
+            <if test="phone != null">
+                phone = #{phone},
+            </if>
+            <if test="longitude != null">
+                longitude = #{longitude},
+            </if>
+            <if test="latitude != null">
+                latitude = #{latitude},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+</mapper>
