@@ -20,7 +20,8 @@
         <el-table-column prop="price" label="价格"></el-table-column>
         <el-table-column prop="userName" label="发布人"></el-table-column>
         <el-table-column prop="acceptName" label="接单人"></el-table-column>
-        <el-table-column prop="time" label="创发布时间"></el-table-column>
+        <el-table-column prop="serveTime" label="服务时间"></el-table-column>
+        <el-table-column prop="time" label="发布时间"></el-table-column>
         <el-table-column prop="acceptTime" label="接单时间"></el-table-column>
         <el-table-column prop="status" label="服务状态">
           <template v-slot="scope">

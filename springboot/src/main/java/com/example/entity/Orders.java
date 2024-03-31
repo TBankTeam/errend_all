@@ -20,6 +20,8 @@ public class Orders {
     private Integer userId;
     /** 接单人ID */
     private Integer acceptId;
+    /** 服务时间 */
+    private String serveTime;
     /** 创建时间 */
     private String time;
     /** 接单时间 */
@@ -178,6 +180,14 @@ public class Orders {
         this.acceptId = acceptId;
     }
 
+    public String getServeTime() {
+        return serveTime;
+    }
+
+    public void setServeTime(String serveTime) {
+        this.serveTime = serveTime;
+    }
+
     public String getTime() {
         return time;
     }
@@ -239,6 +249,7 @@ public class Orders {
                 ", price=" + price +
                 ", userId=" + userId +
                 ", acceptId=" + acceptId +
+                ", serveTime='" + serveTime + '\'' +
                 ", time='" + time + '\'' +
                 ", acceptTime='" + acceptTime + '\'' +
                 ", status='" + status + '\'' +
