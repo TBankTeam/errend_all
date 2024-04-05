@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.common.Result;
 import com.example.entity.Orders;
 import com.example.service.OrdersService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -60,7 +61,7 @@ public class OrdersController {
      * 修改
      */
     @PutMapping("/update")
-    public Result updateById(@RequestBody Orders orders) {
+    public Result updateById(@RequestBody Orders orders) throws JsonProcessingException {
         ordersService.updateById(orders);
         return Result.success();
     }
@@ -69,7 +70,7 @@ public class OrdersController {
      * 志愿者接单
      */
     @PutMapping("/accept")
-    public Result accept(@RequestBody Orders orders) {
+    public Result accept(@RequestBody Orders orders) throws JsonProcessingException {
         ordersService.accept(orders);
         return Result.success();
     }

@@ -15,7 +15,7 @@ public class Orders {
     /** 物品重量 */
     private Double weight;
     /** 小费 */
-    private Double price;
+    private int price;
     /** 发起人ID */
     private Integer userId;
     /** 接单人ID */
@@ -156,11 +156,11 @@ public class Orders {
         this.weight = weight;
     }
 
-    public Double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

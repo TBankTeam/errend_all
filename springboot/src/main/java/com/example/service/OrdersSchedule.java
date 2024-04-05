@@ -7,6 +7,7 @@ import com.example.common.enums.OrderStatusEnum;
 import com.example.common.enums.RecordsTypeEnum;
 import com.example.entity.Orders;
 import com.example.entity.User;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +31,7 @@ public class OrdersSchedule {
     UserService userService;
 
     @Scheduled(fixedRate = 300000)
-    public void task() {
+    public void task() throws JsonProcessingException {
         log.info("========================订单扫描任务开始========================");
         Orders params = new Orders();
         params.setStatus(OrderStatusEnum.NO_ACCEPT.getValue());

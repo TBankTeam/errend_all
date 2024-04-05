@@ -8,6 +8,7 @@ import com.example.entity.Evaluate;
 import com.example.entity.Orders;
 import com.example.mapper.EvaluateMapper;
 import com.example.utils.RedisUtils;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
@@ -35,7 +36,7 @@ public class EvaluateService {
      * 新增
      */
     @Transactional
-    public void add(Evaluate evaluate) {
+    public void add(Evaluate evaluate) throws JsonProcessingException {
         evaluate.setTime(DateUtil.now());  // 设置当前的最新的时间
         evaluateMapper.insert(evaluate);
         // 更新订单状态

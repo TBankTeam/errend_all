@@ -8,7 +8,7 @@ public class Records {
     /** 事件 */
     private String content;
     /** 金额 */
-    private BigDecimal money;
+    private int money;
     /** 用户 */
     private Integer userId;
     /** 志愿者 */
@@ -44,11 +44,11 @@ public class Records {
         this.content = content;
     }
 
-    public BigDecimal getMoney() {
+    public int getMoney() {
         return money;
     }
 
-    public void setMoney(BigDecimal money) {
+    public void setMoney(int money) {
         this.money = money;
     }
 

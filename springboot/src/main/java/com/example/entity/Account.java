@@ -22,9 +22,9 @@ public class Account {
 
     private String token;
 
-    private BigDecimal account;
+    private int account;
 
-    private BigDecimal availableFunds;
+    private int availableFunds;
 
     private Boolean isRider;  // 是否是骑手
 
@@ -36,19 +36,19 @@ public class Account {
         this.isRider = isRider;
     }
 
-    public BigDecimal getAccount() {
+    public int getAccount() {
         return account;
     }
 
-    public void setAccount(BigDecimal account) {
+    public void setAccount(int account) {
         this.account = account;
     }
 
-    public BigDecimal getAvailableFunds() {
+    public int getAvailableFunds() {
         return availableFunds;
     }
 
-    public void setAvailableFunds(BigDecimal availableFunds) {
+    public void setAvailableFunds(int availableFunds) {
         this.availableFunds = availableFunds;
     }
 

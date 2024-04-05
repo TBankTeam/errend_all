@@ -34,9 +34,9 @@ public class User extends Account {
     /** 资金账户 */
     private String accountAddress;
     /** 账户余额 */
-    private BigDecimal account;
+    private int account;
     /** 可用资金 */
-    private BigDecimal availableFunds;
+    private int availableFunds;
     /** 状态 */
     private Integer status;
 
@@ -120,19 +120,19 @@ public class User extends Account {
         this.accountAddress = accountAddress;
     }
 
-    public BigDecimal getAccount() {
+    public int getAccount() {
         return account;
     }
 
-    public void setAccount(BigDecimal account) {
+    public void setAccount(int account) {
         this.account = account;
     }
 
-    public BigDecimal getAvailableFunds() {
+    public int getAvailableFunds() {
         return availableFunds;
     }
 
-    public void setAvailableFunds(BigDecimal availableFunds) {
+    public void setAvailableFunds(int availableFunds) {
         this.availableFunds = availableFunds;
     }
 

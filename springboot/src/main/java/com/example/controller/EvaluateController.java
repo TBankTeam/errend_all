@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.common.Result;
 import com.example.entity.Evaluate;
 import com.example.service.EvaluateService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
@@ -22,7 +23,7 @@ public class EvaluateController {
      * 新增
      */
     @PostMapping("/add")
-    public Result add(@RequestBody Evaluate evaluate) {
+    public Result add(@RequestBody Evaluate evaluate) throws JsonProcessingException {
         evaluateService.add(evaluate);
         return Result.success();
     }

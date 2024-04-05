@@ -8,6 +8,7 @@ import com.example.entity.Certification;
 import com.example.entity.User;
 import com.example.exception.CustomException;
 import com.example.mapper.UserMapper;
+import com.example.utils.BlockChainUtils;
 import com.example.utils.TokenUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -51,10 +52,11 @@ public class UserService {
         Date date = new Date();
         user.setRegisterTime(date);
         user.setUpdateTime(date);
-        user.setAccount(BigDecimal.valueOf(0));
-        user.setAvailableFunds(BigDecimal.valueOf(0));
+        user.setAccount(0);
+        user.setAvailableFunds(0);
         user.setRole(RoleEnum.USER.name());
         user.setStatus(2);
+
         userMapper.insert(user);
     }
 

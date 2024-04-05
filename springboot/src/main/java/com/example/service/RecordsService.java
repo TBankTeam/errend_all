@@ -28,7 +28,7 @@ public class RecordsService implements InitializingBean {
     /**
      * 收支明细存储
      */
-    public static void addRecord(String content,Integer userId,Integer acceptId, BigDecimal money, String type) {
+    public static void addRecord(String content,Integer userId,Integer acceptId, int money, String type) {
         Records records = new Records();
         records.setUserId(userId);
         records.setAcceptId(acceptId);

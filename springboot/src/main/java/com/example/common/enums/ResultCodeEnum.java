@@ -19,6 +19,7 @@ public enum ResultCodeEnum {
     CERTIFICATION_ERROR("5007", "您已提交过认证信息"),
     USER_NOT_EXAMINE("5008", "用户未认证"),
     SIGN_ERROR("5009", "已报名过该活动"),
+    INVALID_OPERATION("5010", "无效操作"),
 
     ;
 

@@ -3,15 +3,19 @@ package com.example.service;
 import cn.hutool.core.date.DateUnit;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.IdUtil;
+import com.example.common.enums.AdminAddressEnum;
 import com.example.common.enums.OrderStatusEnum;
 import com.example.common.enums.RecordsTypeEnum;
 import com.example.common.enums.ResultCodeEnum;
 import com.example.entity.*;
 import com.example.exception.CustomException;
 import com.example.mapper.OrdersMapper;
+import com.example.utils.BlockChainUtils;
 import com.example.utils.TokenUtils;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.sun.org.apache.xpath.internal.operations.Or;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -70,24 +74,40 @@ public class OrdersService {
      * 修改
      */
     @Transactional
-    public void updateById(Orders orders) {
-        if (OrderStatusEnum.DONE.getValue().equals(orders.getStatus())) {
-            // 志愿者完成后,需求者点击完成后再评价完，订单完成
+    public void updateById(Orders orders) throws JsonProcessingException {
+        BlockChainUtils blockChainUtils = new BlockChainUtils();
+
+        if (OrderStatusEnum.NO_ACCEPT.getValue().equals(orders.getStatus())) {
+            //管理员审核通过，订单上链
+            User publishUser = userService.selectById(orders.getUserId());
+            String orderAddress = blockChainUtils.publishOrder(publishUser.getAccountAddress(),orders.getName(),orders.getPrice(),orders.getDescr());
+            orders.setOrderNo(orderAddress);  // 设置唯一的订单编号
+            blockChainUtils.reviewOrder(AdminAddressEnum.ADMIN_ADDRESS_ENUM.getValue(),orderAddress);
+        }else if (OrderStatusEnum.NO_VERIFY.getValue().equals(orders.getStatus())) {
+            //志愿者确认完成
+            Orders orders1 = ordersMapper.selectById(orders.getId());
+            User acceptUser = userService.selectById(orders.getUserId());
+            blockChainUtils.volunteerFinishOrder(acceptUser.getAccountAddress(),orders1.getOrderNo());
+        }else if (OrderStatusEnum.DONE.getValue().equals(orders.getStatus())) {
+            // 需求者点击完成后再评价完，订单完成
             //  打钱(志愿者加钱，需求者减钱)
             Integer userId = orders.getUserId();
             User user = userService.selectById(userId);
-            user.setAccount(user.getAccount().subtract(BigDecimal.valueOf(orders.getPrice())));
+            user.setAccount(user.getAccount() - orders.getPrice());
             user.setPassword(null);
             userService.updateById(user);
             Integer acceptId = orders.getAcceptId();
             User accept = userService.selectById(acceptId);
-            accept.setAccount(accept.getAccount().add(BigDecimal.valueOf(orders.getPrice())));
-            accept.setAvailableFunds(accept.getAvailableFunds().add(BigDecimal.valueOf(orders.getPrice())));
+            accept.setAccount(accept.getAccount() + orders.getPrice());
+            accept.setAvailableFunds(accept.getAvailableFunds() + orders.getPrice());
             user.setPassword(null);
             accept.setPassword(null);
             userService.updateById(accept);
+            Orders orders1 = ordersMapper.selectById(orders.getId());
+            blockChainUtils.assessVolunteer(user.getAccountAddress(),orders1.getOrderNo());
+
             // 记录收支明细
-            RecordsService.addRecord( orders.getName(),userId,acceptId, BigDecimal.valueOf(orders.getPrice()), RecordsTypeEnum.SERVE.getValue());
+            RecordsService.addRecord( orders.getName(),userId,acceptId, orders.getPrice(), RecordsTypeEnum.SERVE.getValue());
         } else if(OrderStatusEnum.CANCEL.getValue().equals(orders.getStatus())) {
             // 记录收支明细
 //            RecordsService.addRecord("取消订单" + orders.getName(),orders.getUserId(), BigDecimal.valueOf(orders.getPrice()), RecordsTypeEnum.CANCEL.getValue());
@@ -98,7 +118,7 @@ public class OrdersService {
             user.setId(userId);
             user.setUpdateTime(date);
             log.error(String.valueOf(user.getAvailableFunds()));
-            user.setAvailableFunds(user.getAvailableFunds().add(BigDecimal.valueOf(orders.getPrice())));
+            user.setAvailableFunds(user.getAvailableFunds() + orders.getPrice());
             user.setPassword(null);
             userService.updateById(user);
         }
@@ -201,22 +221,19 @@ public class OrdersService {
         if (!currentUser.getIsRider()) {
             throw new CustomException(ResultCodeEnum.USER_NOT_EXAMINE);
         }
-        BigDecimal available_funds = currentUser.getAvailableFunds();
-        log.error(orders.toString());
-        log.error("available_funds:" + available_funds);
-        Double price = orders.getPrice();
-        if (price > available_funds.doubleValue()) {
+        int available_funds = currentUser.getAvailableFunds();
+        int price = orders.getPrice();
+        if (price > available_funds) {
             throw new CustomException(ResultCodeEnum.ACCOUNT_LIMIT_ERROR);
         }
         // 更新冻结资金余额
-        currentUser.setAvailableFunds(available_funds.subtract(BigDecimal.valueOf(price)));
+        currentUser.setAvailableFunds(available_funds - price);
         User user = new User();
         user = (User) currentUser;
         user.setPassword(null);
         userService.updateById(user);
 
         orders.setUserId(currentUser.getId());
-        orders.setOrderNo(IdUtil.getSnowflakeNextIdStr());  // 设置唯一的订单编号
         orders.setStatus(OrderStatusEnum.NO_EXAMINE.getValue());
         orders.setTime(DateUtil.now());
         ordersMapper.insert(orders);
@@ -225,14 +242,24 @@ public class OrdersService {
 //        RecordsService.addRecord("下单" + orders.getName(),orders.getUserId(), BigDecimal.valueOf(orders.getPrice()), RecordsTypeEnum.OUT.getValue());
     }
 
-    public void accept(Orders orders) {
+    public void accept(Orders orders) throws JsonProcessingException {
         Account currentUser = TokenUtils.getCurrentUser();  // 认证用户
+        Certification certification = certificationService.selectByUserId(currentUser.getId());
+        if(certification.getStatus().equals("通过")){
+            currentUser.setIsRider(true);
+        }else {
+            throw new CustomException(ResultCodeEnum.USER_NOT_EXAMINE);
+        }
         if(currentUser.getId() == orders.getUserId()){
-            throw new CustomException(ResultCodeEnum.ACCOUNT_LIMIT_ERROR);
+            throw new CustomException(ResultCodeEnum.INVALID_OPERATION);
         }
         orders.setAcceptId(currentUser.getId());
         orders.setAcceptTime(DateUtil.now());
         orders.setStatus(OrderStatusEnum.NO_ACHIEVE.getValue());
+        BlockChainUtils blockChainUtils = new BlockChainUtils();
+        Orders orders1 = ordersMapper.selectById(orders.getId());
+        User user = userService.selectById(currentUser.getId());
+        blockChainUtils.acceptOrder(user.getAccountAddress(),orders1.getOrderNo());
         this.updateById(orders);
     }
 

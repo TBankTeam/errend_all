@@ -1,12 +1,15 @@
 package com.example.controller;
 
 import com.example.common.Result;
+import com.example.common.enums.AdminAddressEnum;
 import com.example.common.enums.RecordsTypeEnum;
 import com.example.entity.Certification;
 import com.example.entity.User;
 import com.example.service.CertificationService;
 import com.example.service.RecordsService;
 import com.example.service.UserService;
+import com.example.utils.BlockChainUtils;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -61,7 +64,7 @@ public class CertificationController {
      * 修改
      */
     @PutMapping("/update")
-    public Result updateById(@RequestBody Certification certification) {
+    public Result updateById(@RequestBody Certification certification) throws JsonProcessingException {
         certificationService.updateById(certification);
         User dbuser = userService.selectById(certification.getUserId());
         User user = new User();
@@ -82,13 +85,17 @@ public class CertificationController {
                 price = 120;
             }
             Date date = new Date();
-            user.setAccount(BigDecimal.valueOf(price));
-            user.setAvailableFunds(BigDecimal.valueOf(price));
+            user.setAccount(price);
+            user.setAvailableFunds(price);
             user.setUpdateTime(date);
             user.setStatus(1);
             user.setPassword(null);
+            BlockChainUtils blockChainUtils = new BlockChainUtils();
+            String accountAddress = blockChainUtils.getWallet(user.getUsername());
+            blockChainUtils.initBalance(AdminAddressEnum.ADMIN_ADDRESS_ENUM.getValue(), accountAddress,price);
+            user.setAccountAddress(accountAddress);
             userService.updateById(user);
-            RecordsService.addRecord( "审核发放",0, user.getId(), BigDecimal.valueOf(price), RecordsTypeEnum.ISSUE.getValue());
+            RecordsService.addRecord( "审核发放",0, user.getId(), price, RecordsTypeEnum.ISSUE.getValue());
         }else if(certification.getStatus().equals("拒绝")){
             user.setStatus(5);
             user.setPassword(null);
