@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.EvaluateMapper">
+
+    <sql id="Base_Column_List">
+        id,content,star,user_id,accept_id,order_id,time
+    </sql>
+
+    <select id="selectAll" resultType="com.example.entity.Evaluate">
+        select
+        evaluate.*, user1.name as userName, user2.name as acceptName, orders.order_no as orderNo
+        from evaluate
+        left join user user1
+        on evaluate.user_id = user1.id
+        left join user user2
+        on evaluate.accept_id = user2.id
+        left join orders
+        on evaluate.order_id = orders.id
+        <where>
+            <if test="content != null"> and evaluate.content like concat('%', #{content}, '%')</if>
+            <if test="userName != null"> and user1.name like concat('%', #{userName}, '%')</if>
+            <if test="acceptName != null"> and user2.name like concat('%', #{acceptName}, '%')</if>
+            <if test="orderNo != null"> and orders.order_no like concat('%', #{orderNo}, '%')</if>
+        </where>
+        order by id desc
+    </select>
+
+    <select id="selectById" resultType="com.example.entity.Evaluate">
+        select
+        <include refid="Base_Column_List" />
+        from evaluate
+        where id = #{id}
+    </select>
+
+    <select id="selectComment" resultType="com.example.entity.Evaluate">
+        select
+        <include refid="Base_Column_List" />
+        from evaluate
+        where user_id = #{userId} or accept_id = #{userId}
+    </select>
+
+    <delete id="deleteById">
+        delete from evaluate
+        where  id = #{id}
+    </delete>
+
+    <insert id="insert" parameterType="com.example.entity.Evaluate" useGeneratedKeys="true">
+        insert into evaluate
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="content != null">content,</if>
+            <if test="star != null">star,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="acceptId != null">accept_id,</if>
+            <if test="orderId != null">order_id,</if>
+            <if test="time != null">time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="content != null">#{content},</if>
+            <if test="star != null">#{star},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="acceptId != null">#{acceptId},</if>
+            <if test="orderId != null">#{orderId},</if>
+            <if test="time != null">#{time},</if>
+        </trim>
+    </insert>
+
+    <update id="updateById" parameterType="com.example.entity.Evaluate">
+        update evaluate
+        <set>
+            <if test="content != null">
+                content = #{content},
+            </if>
+            <if test="star != null">
+                star = #{star},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId},
+            </if>
+            <if test="acceptId != null">
+                accept_id = #{acceptId},
+            </if>
+            <if test="orderId != null">
+                order_id = #{orderId},
+            </if>
+            <if test="time != null">
+                time = #{time},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+</mapper>

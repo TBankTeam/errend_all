@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.ActivitySignMapper">
+
+    <sql id="Base_Column_List">
+        id,activity_id,phone,date,user_id,status,reason
+    </sql>
+
+    <select id="selectAll" resultType="com.example.entity.ActivitySign">
+        select
+        activity_sign.*, user.name as userName, activity.name as activityName
+        from activity_sign
+        left join user
+        on activity_sign.user_id = user.id
+        left join activity
+        on activity_sign.activity_id = activity.id
+        <where>
+            <if test="userId != null"> and activity_sign.user_id = #{userId}</if>
+            <if test="userName != null"> and user.name like concat('%', #{userName}, '%')</if>
+        </where>
+        order by activity_sign.id desc
+    </select>
+
+    <select id="selectById" resultType="com.example.entity.ActivitySign">
+        select
+        <include refid="Base_Column_List" />
+        from activity_sign
+        where id = #{id}
+    </select>
+
+    <delete id="deleteById">
+        delete from activity_sign
+        where  id = #{id}
+    </delete>
+
+    <insert id="insert" parameterType="com.example.entity.ActivitySign" useGeneratedKeys="true" keyProperty="id">
+        insert into activity_sign
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="activityId != null">activity_id,</if>
+            <if test="phone != null">phone,</if>
+            <if test="date != null">date,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="status != null">status,</if>
+            <if test="reason != null">reason,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="activityId != null">#{activityId},</if>
+            <if test="phone != null">#{phone},</if>
+            <if test="date != null">#{date},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="status != null">#{status},</if>
+            <if test="reason != null">#{reason},</if>
+        </trim>
+    </insert>
+
+    <update id="updateById" parameterType="com.example.entity.ActivitySign">
+        update activity_sign
+        <set>
+            <if test="activityId != null">
+                activity_id = #{activityId},
+            </if>
+            <if test="phone != null">
+                phone = #{phone},
+            </if>
+            <if test="date != null">
+                date = #{date},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="reason != null">
+                reason = #{reason},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+</mapper>
