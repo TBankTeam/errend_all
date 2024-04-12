@@ -100,14 +100,10 @@ public class TokenController {
     }
 
     @PostMapping("/assessVolunteer")
-    public boolean assessVolunteer(String userAddress, String orderAddress) throws JsonProcessingException {
-        boolean res = TokenUtil.assessVolunteer(userAddress,orderAddress);
+    public String assessVolunteer(String userAddress, String orderAddress) throws JsonProcessingException {
+        String res = TokenUtil.assessVolunteer(userAddress,orderAddress);
         log.error("assessVolunteer res:" + res);
-        if(res == true){
-            return true;
-        }else {
-            return false;
-        }
+        return res;
     }
 
 

@@ -136,7 +136,7 @@ public class BlockChainUtils {
     }
 
 
-    public boolean assessVolunteer(String userAddress, String orderAddress) throws JsonProcessingException {
+    public String assessVolunteer(String userAddress, String orderAddress) throws JsonProcessingException {
         String url = "http://localhost:8083/master/assessVolunteer";
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.MULTIPART_FORM_DATA);
@@ -145,8 +145,8 @@ public class BlockChainUtils {
         map.add("orderAddress",orderAddress);
         HttpEntity requestBody = new HttpEntity(map, headers);
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity responseEntity = restTemplate.postForEntity(url, requestBody, boolean.class);
-        boolean res = (boolean)responseEntity.getBody();
+        ResponseEntity responseEntity = restTemplate.postForEntity(url, requestBody, String.class);
+        String res = (String) responseEntity.getBody();
         return res;
     }
 

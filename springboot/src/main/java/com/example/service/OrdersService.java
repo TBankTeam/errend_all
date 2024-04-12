@@ -109,10 +109,10 @@ public class OrdersService {
             accept.setPassword(null);
             userService.updateById(accept);
             Orders orders1 = ordersMapper.selectById(orders.getId());
-            blockChainUtils.assessVolunteer(user.getAccountAddress(),orders1.getOrderNo());
+            String hashcode = blockChainUtils.assessVolunteer(user.getAccountAddress(),orders1.getOrderNo());
 
             ImageFileUtils imageFileUtils = new ImageFileUtils();
-            String certificate = imageFileUtils.getimage(orders.getOrderNo());
+            String certificate = imageFileUtils.getimage(orders.getOrderNo(),hashcode);
             orders.setCertificate(certificate);
 
             log.error("certificate:" + certificate);

@@ -290,7 +290,7 @@ public class TokenUtil {
     }
 
 
-    public static boolean assessVolunteer(String userAddress, String orderAddress) throws JsonProcessingException {
+    public static String assessVolunteer(String userAddress, String orderAddress) throws JsonProcessingException {
         //String userAddress = "0x925dfccfb7d2e6c1cafb7aa30acfcc2620efbc49";
         String funcName = "assess_volunteer";
         String ABI = IOUtil.readResourceAsString("abi/P2PTime.abi");
@@ -306,7 +306,7 @@ public class TokenUtil {
         Dict result = WEBASEUtil.funcRequest(userAddress,funcName,funcParam,contractName,orderAddress,ABI);
         ObjectMapper objectMapper = new ObjectMapper();
         Map<String, Object> map = objectMapper.readValue(result.getStr("result"), Map.class);
-        boolean res = (boolean) map.get("statusOK");
+        String res = (String) map.get("transactionHash");
 // 尝试解析结果前先打印中间结果
         try {
             JSONObject resBody = JSONUtil.parseObj(result);

@@ -96,7 +96,7 @@ public class ImageFileUtils {
         g2d.dispose();
     }
 
-    public static String getimage(String code) throws IOException {
+    public static String getimage(String code,String hashcode) throws IOException {
         // 1. 读取原始图片
         BufferedImage image = null;
         try {
@@ -128,6 +128,12 @@ public class ImageFileUtils {
         addTextToImage(image, chineseText, font, textColor, textX, textY);
 
         chineseText = "证书编号：" + code;
+        textX = 70; // 文本左侧的边距
+        textY = 760; // 设置文本的垂直位置
+        font = new Font("微软雅黑", Font.PLAIN, 11);
+        addTextToImage(image, chineseText, font, textColor, textX, textY);
+
+        chineseText = "哈希值：" + hashcode;
         textX = 70; // 文本左侧的边距
         textY = 780; // 设置文本的垂直位置
         font = new Font("微软雅黑", Font.PLAIN, 11);

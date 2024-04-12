@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80030
 File Encoding         : 65001
 
-Date: 2024-04-06 00:30:38
+Date: 2024-04-12 12:29:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,7 +29,7 @@ CREATE TABLE `activity` (
   `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci COMMENT '活动详情',
   `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '地址',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='公益活动';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='公益活动';
 
 -- ----------------------------
 -- Records of activity
@@ -41,6 +41,7 @@ INSERT INTO `activity` VALUES ('5', '支部结对聚合力 携手共建保健康
 INSERT INTO `activity` VALUES ('6', '季度集体生日会，让“银发”志愿者感受“大家庭”的温暖', 'http://localhost:9090/files/1704856740599-1.jpeg', '\"老吾老，以及人之老\"，尊老敬老是中华民族的传统美德，也是培育和践行社会主义核心价值观的基本要求。为营造敬老、亲老、爱老、助老的社会风尚', '2023-12-01', '2024-01-30', '<p>\"老吾老，以及人之老\"，尊老敬老是中华民族的传统美德，也是培育和践行社会主义核心价值观的基本要求。为营造敬老、亲老、爱老、助老的社会风尚，7月30日下午，思南县青年志愿者协会在双塘街道丽景社区开展\"银发丽景”集体生日会\"。下午一点半，志愿者们就开始为生日会做准备。摆桌椅、切水果、泡茶……志愿者们忙得不亦乐乎。一个小时后，生日会现场布置妥当，志愿者们满怀期待地等待寿星们的到来。</p><p style=\"text-align:center;\"><a href=\"https://www.yanglaocn.com/images/upload/img/2023/08_03/1ab710e2b541778e94fc822a3dab3dbb.jpg\" target=\"_blank\"><img alt=\"季度集体生日会，让“银发”志愿者感受“大家庭”的温暖\" src=\"https://www.yanglaocn.com/images/upload/img/2023/08_03/1ab710e2b541778e94fc822a3dab3dbb.jpg\"/></a></p><p>下午三点半活动正式开始，来自丽景社区的32名银发志愿者欢聚一堂。志愿者首先带着老人们做了暖心小游戏，之后为他们送上生日帽，志愿们还为每位老人精心的准备了爱心生日卡。拿到生日卡，戴上生日帽的银发志愿者像孩子一样，露出兴奋和欣喜的笑容。</p><p>志愿者们集体喊出\"爷爷奶奶们，祝你们生日快乐！\"生日会就在这轻松愉快的氛围中开始。活动中，志愿者们表演了舞蹈、合唱了《没有共产党就没有新中国》等节目。，邀请大家一起唱，现场气氛热烈，把生日会推上了高潮。</p><p>最抢眼的还算是我们年纪最长的寿星了，我们的老赵，今年已有75岁，他还为所有的寿星们献上祝福，祝\"大家生日快乐，身体健康，还感谢协会为我们举办生日会，真是太高兴了，虽然自己的子女都不在身边，但有你们在我们身边，有你们惦记着我们，我们就是幸福的\"，虽然老赵75岁的高龄了，但说起话来一点都不含糊，在他讲完后，大家的掌声都不愿停下。最后为大家为大家献上一首《大海航前靠舵手》，现场其乐融融，充满了温暖与欢笑。</p><p style=\"text-align:center;\"><a href=\"https://www.yanglaocn.com/images/upload/img/2023/08_03/29ec0c8e6dfb94a63d2e872d48b6e5c4.jpg\" target=\"_blank\"><img alt=\"季度集体生日会，让“银发”志愿者感受“大家庭”的温暖\" src=\"https://www.yanglaocn.com/images/upload/img/2023/08_03/29ec0c8e6dfb94a63d2e872d48b6e5c4.jpg\"/></a></p><p>活动最后，志愿者们将双层大蛋糕推到场地中央，点燃蜡烛，为寿星们唱起生日歌。寿星们许下心愿，一同吹灭蜡烛，开心地享用志愿者切好的蛋糕，活动在温馨的氛围中落下帷幕。</p><p style=\"text-align:center;\"><a href=\"https://www.yanglaocn.com/images/upload/img/2023/08_03/15cada325e90ad67d14316c25de3aa7b.jpg\" target=\"_blank\"><img alt=\"季度集体生日会，让“银发”志愿者感受“大家庭”的温暖\" src=\"https://www.yanglaocn.com/images/upload/img/2023/08_03/15cada325e90ad67d14316c25de3aa7b.jpg\"/></a></p><p>协会希望通过集体生日会，让银发志愿者们彼此拉近距离，多走出家门，多交朋友，丰富老年人生活。为此，接下来协会将每季度都会为银发志愿者们集体庆生，让他们都能感觉到大家庭的温暖。</p>', '和平东路1221号');
 INSERT INTO `activity` VALUES ('7', '爱心共建聚合力 关爱老人做公益', 'http://localhost:9090/files/1704856732397-3085808915_14_561_400.jpg', '送温暖，送祝福，关爱老人身心健康', '2023-12-01', '2024-01-20', '<p style=\"text-align:center;\"><img src=\"https://www.yanglaocn.com/images/upload/img/2023/12_13/885e29bf31d55a7065303bc7dff2f2c3.png\"/><img src=\"http://localhost:9090/files/1703840142970-image.png\" contenteditable=\"false\" style=\"font-size: 14px; max-width: 100%;\"/></p><br/>', '和平东路1221号');
 INSERT INTO `activity` VALUES ('8', 'test', null, 'test', '2024-03-28', '2024-03-30', '<p>来玩啊</p>', 'test');
+INSERT INTO `activity` VALUES ('9', 'test', 'http://localhost:9090/files/1712823646489-1697438073596-avatar.png', 'test', '2024-04-12', '2024-04-12', '<p>test</p>', 'test');
 
 -- ----------------------------
 -- Table structure for activity_sign
@@ -78,7 +79,7 @@ CREATE TABLE `address` (
   `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '联系电话',
   `user_id` int DEFAULT NULL COMMENT '关联用户ID',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='联系人信息';
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='联系人信息';
 
 -- ----------------------------
 -- Records of address
@@ -93,6 +94,7 @@ INSERT INTO `address` VALUES ('12', '合肥大剧院', '110号', '小武哥哥',
 INSERT INTO `address` VALUES ('13', '合肥西路', '1201号', '小雨', '13988997788', '24');
 INSERT INTO `address` VALUES ('15', 'dsa', 'das', 'dsa', 'dsa', '31');
 INSERT INTO `address` VALUES ('16', 'sf', 'gf', 'dgfd', 'gdf', '31');
+INSERT INTO `address` VALUES ('17', 'dz', 'mp', 'zl', '123', '32');
 
 -- ----------------------------
 -- Table structure for admin
@@ -106,7 +108,6 @@ CREATE TABLE `admin` (
   `avatar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '头像',
   `role` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '角色标识',
   `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '电话',
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '邮箱',
   `count_address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '钱包地址',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='管理员';
@@ -114,10 +115,10 @@ CREATE TABLE `admin` (
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
-INSERT INTO `admin` VALUES ('1', 'admin', '$2a$10$LENHDWwWccAAVaeI.F/d0O0sMnVfowlObdqR2Uts1x0gQnoYuZDCG', '王大爷', 'http://localhost:9090/files/1697438073596-avatar.png', 'ADMIN', '13677889922', 'admin@xm.com', null);
-INSERT INTO `admin` VALUES ('3', 'test', '$2a$10$LENHDWwWccAAVaeI.F/d0O0sMnVfowlObdqR2Uts1x0gQnoYuZDCG', 'test', 'http://localhost:9090/files/1710832789611-1700704030807-mT24qmNOwHzsd0c4ff9133bcb1b397eeedf9d5bc65e0.png', 'ADMIN', '123', '321', null);
-INSERT INTO `admin` VALUES ('4', 'test2', '******', 'test2', 'http://localhost:9090/files/1710933709146-1700703916417-vj17JrViON0r99915b5d3c7d49851528fb541fada677.png', 'ADMIN', '123', '321', null);
-INSERT INTO `admin` VALUES ('5', 'test3', '******', 'test3', 'http://localhost:9090/files/1710933720210-1700706315381-nQC2Fa5ufYXE76fda5dd9caa4d0a4037ec4dc7e157b7.png', 'ADMIN', '123', '321', null);
+INSERT INTO `admin` VALUES ('1', 'admin', '$2a$10$LENHDWwWccAAVaeI.F/d0O0sMnVfowlObdqR2Uts1x0gQnoYuZDCG', '王大爷', 'http://localhost:9090/files/1697438073596-avatar.png', 'ADMIN', '13677889922', null);
+INSERT INTO `admin` VALUES ('3', 'test', '$2a$10$LENHDWwWccAAVaeI.F/d0O0sMnVfowlObdqR2Uts1x0gQnoYuZDCG', 'test', 'http://localhost:9090/files/1710832789611-1700704030807-mT24qmNOwHzsd0c4ff9133bcb1b397eeedf9d5bc65e0.png', 'ADMIN', '123', null);
+INSERT INTO `admin` VALUES ('4', 'test2', '******', 'test2', 'http://localhost:9090/files/1710933709146-1700703916417-vj17JrViON0r99915b5d3c7d49851528fb541fada677.png', 'ADMIN', '123', null);
+INSERT INTO `admin` VALUES ('5', 'test3', '******', 'test3', 'http://localhost:9090/files/1710933720210-1700706315381-nQC2Fa5ufYXE76fda5dd9caa4d0a4037ec4dc7e157b7.png', 'ADMIN', '123', null);
 
 -- ----------------------------
 -- Table structure for category
@@ -157,7 +158,7 @@ CREATE TABLE `certification` (
   `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '待审核' COMMENT '审核状态',
   `reason` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '审核理由',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='认证信息';
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='认证信息';
 
 -- ----------------------------
 -- Records of certification
@@ -168,6 +169,7 @@ INSERT INTO `certification` VALUES ('13', '1', 'abc', 'http://localhost:9090/fil
 INSERT INTO `certification` VALUES ('15', '15', 'abc10', null, null, null, null, null, null, '通过', null);
 INSERT INTO `certification` VALUES ('16', '31', 'wanglaowu', null, null, null, null, null, null, '通过', null);
 INSERT INTO `certification` VALUES ('17', '2', 'lisi', null, '123123', '321321', null, null, '123', '通过', null);
+INSERT INTO `certification` VALUES ('19', '32', 'yq', 'http://localhost:9090/files/1712844727707-OiNbhSc5DwqIa211f268fcb5da6c99a805f8d86993fa.png', '123123', '361025195303020516', 'http://localhost:9090/files/1712844752227-vdrkP7JpoWlw33910d12706074886a41ea3f068e3653.png', 'http://localhost:9090/files/1712844754937-24o9EHeY0waE33910d12706074886a41ea3f068e3653.png', 'dz', '通过', null);
 
 -- ----------------------------
 -- Table structure for comment
@@ -183,7 +185,7 @@ CREATE TABLE `comment` (
   `fid` int DEFAULT NULL COMMENT '关联ID',
   `module` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '模块',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='评论表';
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='评论表';
 
 -- ----------------------------
 -- Records of comment
@@ -216,7 +218,7 @@ CREATE TABLE `evaluate` (
   `time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '时间',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `user_id` (`user_id`,`order_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='评价表';
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='评价表';
 
 -- ----------------------------
 -- Records of evaluate
@@ -227,6 +229,7 @@ INSERT INTO `evaluate` VALUES ('10', null, '4.0', '2', '31', '22', '2024-03-21 2
 INSERT INTO `evaluate` VALUES ('13', '好', '5.0', '31', '2', '29', '2024-03-21 20:30:15');
 INSERT INTO `evaluate` VALUES ('14', 'h', '5.0', '2', '31', '21', '2024-03-21 20:44:30');
 INSERT INTO `evaluate` VALUES ('16', '好', '5.0', '2', '31', '20', '2024-03-21 20:44:37');
+INSERT INTO `evaluate` VALUES ('17', 'dsa', '4.0', '32', '31', '30', '2024-04-11 22:55:22');
 
 -- ----------------------------
 -- Table structure for news
@@ -280,41 +283,6 @@ INSERT INTO `notice` VALUES ('3', '今天天气很不错，可以出去一起玩
 INSERT INTO `notice` VALUES ('4', '春分祝福', '春分快乐', '2024-03-20', 'admin');
 
 -- ----------------------------
--- Table structure for nurse_house
--- ----------------------------
-DROP TABLE IF EXISTS `nurse_house`;
-CREATE TABLE `nurse_house` (
-  `id` int NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '名称',
-  `price` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '价格',
-  `img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '图片',
-  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '地址',
-  `count` int DEFAULT '0' COMMENT '浏览量',
-  `tags` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '标签',
-  `beds` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '床位数量',
-  `nature` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '性质',
-  `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '类型',
-  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci COMMENT '详情',
-  `area` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '面积',
-  `date` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '成立日期',
-  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '联系方式',
-  `longitude` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '经度',
-  `latitude` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '纬度',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='养老院';
-
--- ----------------------------
--- Records of nurse_house
--- ----------------------------
-INSERT INTO `nurse_house` VALUES ('1', '怡安养老院', '3500元起/月', 'http://localhost:9090/files/1704945418199-微信截图_20240103155915.png', '安徽 ▪ 合肥 ▪ 包河区 贵阳路与云南路交叉口东北侧', '10', '[\"医养结合\",\"私人定制\",\"连锁品牌\",\"餐饮丰富\",\"非常nice\"]', '2200个', '民营', '养老社区', '<h1 id=\"33g3b\">怡安养老院</h1><p>一期于2023年7月投入使用。占地面积约8 万平米，地上建筑面积约16万平米，可提供约2200个养老单元，配置二级康复医院和约110张医疗床位。社区开业后，可为自理、半自理、失能、认知症的长辈提供高品质的养老服务。</p><p>泰康之家·徽园位于安徽省的政治、经济、金融、文化中心——合肥滨湖新区的金融后台区板块，临近中国第五大淡水湖巢湖之滨。项目区位优越、配套成熟，景观资源良好，紧临大型城市绿化景观带及地块5号线终点站，周边环绕高品质住宅区、国际学校、金融机构总部等。</p><h3><p><img src=\"https://www.yanglaocn.com/images/upload/img/2023/01_13/5a33f6a8d217959b3678ae41508c9129.png\" alt=\"泰康之家·徽园机构介绍\"/></p></h3><p>泰康之家是专注养老、护理、康复实体建设运营和创新服务的专业品牌，采用持续照护模式，独创医养结合特色，打造大规模、全功能、高品质、连锁医养社区。作为养老行业的先行者，泰康早在2009年率先获得保险机构投资养老社区的试点资格。目前泰康之家养老社区已在北京、上海、广州、成都、苏州、武汉、深圳、重庆、南京、三亚、杭州、南昌、厦门、沈阳、长沙、南宁、宁波、合肥、郑州、青岛、福州、温州、天津、济南、呼和浩特、昆明、佛山27座核心城市布局，成为全国最大的高品质连锁养老集团之一。社区居民可在各城市间“迁徙”度假，享受旅居养老生活的幸福时光。</p>', '约8万平米', '2023年07月', '18977886699', '117.272955', '31.705404');
-INSERT INTO `nurse_house` VALUES ('2', '舒心养老院', '3500元起/月', 'http://localhost:9090/files/1704945418199-微信截图_20240103155915.png', '安徽 ▪ 合肥 ▪ 包河区 贵阳路与云南路交叉口东北侧', '10', '[\"医养结合\",\"私人定制\",\"连锁品牌\",\"餐饮丰富\"]', '2200个', '民营', '养老社区', '<h3><h1 id=\"7dc4z\">舒心养老院</h1></h3><p>一期于2023年7月投入使用。占地面积约8 万平米，地上建筑面积约16万平米，可提供约2200个养老单元，配置二级康复医院和约110张医疗床位。社区开业后，可为自理、半自理、失能、认知症的长辈提供高品质的养老服务。</p><p>泰康之家·徽园位于安徽省的政治、经济、金融、文化中心——合肥滨湖新区的金融后台区板块，临近中国第五大淡水湖巢湖之滨。项目区位优越、配套成熟，景观资源良好，紧临大型城市绿化景观带及地块5号线终点站，周边环绕高品质住宅区、国际学校、金融机构总部等。</p><h3><p><img src=\"https://www.yanglaocn.com/images/upload/img/2023/01_13/5a33f6a8d217959b3678ae41508c9129.png\" alt=\"泰康之家·徽园机构介绍\"/></p></h3><p>泰康之家是专注养老、护理、康复实体建设运营和创新服务的专业品牌，采用持续照护模式，独创医养结合特色，打造大规模、全功能、高品质、连锁医养社区。作为养老行业的先行者，泰康早在2009年率先获得保险机构投资养老社区的试点资格。目前泰康之家养老社区已在北京、上海、广州、成都、苏州、武汉、深圳、重庆、南京、三亚、杭州、南昌、厦门、沈阳、长沙、南宁、宁波、合肥、郑州、青岛、福州、温州、天津、济南、呼和浩特、昆明、佛山27座核心城市布局，成为全国最大的高品质连锁养老集团之一。社区居民可在各城市间“迁徙”度假，享受旅居养老生活的幸福时光。</p>', '约8万平米', '2023年07月', '18977886699', '117.272955', '31.705404');
-INSERT INTO `nurse_house` VALUES ('3', '医健新安养老院', '3500元起/月', 'http://localhost:9090/files/1704945418199-微信截图_20240103155915.png', '安徽 ▪ 合肥 ▪ 包河区 贵阳路与云南路交叉口东北侧', '10', '[\"医养结合\",\"私人定制\",\"连锁品牌\",\"餐饮丰富\"]', '2200个', '民营', '养老社区', '<h1>医健新安养老院</h1><p><br/></p><p>一期于2023年7月投入使用。占地面积约8 万平米，地上建筑面积约16万平米，可提供约2200个养老单元，配置二级康复医院和约110张医疗床位。社区开业后，可为自理、半自理、失能、认知症的长辈提供高品质的养老服务。</p><p>泰康之家·徽园位于安徽省的政治、经济、金融、文化中心——合肥滨湖新区的金融后台区板块，临近中国第五大淡水湖巢湖之滨。项目区位优越、配套成熟，景观资源良好，紧临大型城市绿化景观带及地块5号线终点站，周边环绕高品质住宅区、国际学校、金融机构总部等。</p><h3><p><img src=\"https://www.yanglaocn.com/images/upload/img/2023/01_13/5a33f6a8d217959b3678ae41508c9129.png\" alt=\"泰康之家·徽园机构介绍\"/></p></h3><p>泰康之家是专注养老、护理、康复实体建设运营和创新服务的专业品牌，采用持续照护模式，独创医养结合特色，打造大规模、全功能、高品质、连锁医养社区。作为养老行业的先行者，泰康早在2009年率先获得保险机构投资养老社区的试点资格。目前泰康之家养老社区已在北京、上海、广州、成都、苏州、武汉、深圳、重庆、南京、三亚、杭州、南昌、厦门、沈阳、长沙、南宁、宁波、合肥、郑州、青岛、福州、温州、天津、济南、呼和浩特、昆明、佛山27座核心城市布局，成为全国最大的高品质连锁养老集团之一。社区居民可在各城市间“迁徙”度假，享受旅居养老生活的幸福时光。</p>', '约8万平米', '2023年07月', '18977886699', '117.272955', '31.705404');
-INSERT INTO `nurse_house` VALUES ('4', '丰盛爱心护理院', '3500元起/月', 'http://localhost:9090/files/1704945418199-微信截图_20240103155915.png', '安徽 ▪ 合肥 ▪ 包河区 贵阳路与云南路交叉口东北侧', '10', '[\"医养结合\",\"私人定制\",\"连锁品牌\",\"餐饮丰富\"]', '2200个', '民营', '养老社区', '<h1>丰盛爱心护理院</h1><p><br/></p><p>一期于2023年7月投入使用。占地面积约8 万平米，地上建筑面积约16万平米，可提供约2200个养老单元，配置二级康复医院和约110张医疗床位。社区开业后，可为自理、半自理、失能、认知症的长辈提供高品质的养老服务。</p><p>泰康之家·徽园位于安徽省的政治、经济、金融、文化中心——合肥滨湖新区的金融后台区板块，临近中国第五大淡水湖巢湖之滨。项目区位优越、配套成熟，景观资源良好，紧临大型城市绿化景观带及地块5号线终点站，周边环绕高品质住宅区、国际学校、金融机构总部等。</p><h3><p><img src=\"https://www.yanglaocn.com/images/upload/img/2023/01_13/5a33f6a8d217959b3678ae41508c9129.png\" alt=\"泰康之家·徽园机构介绍\"/></p></h3><p>泰康之家是专注养老、护理、康复实体建设运营和创新服务的专业品牌，采用持续照护模式，独创医养结合特色，打造大规模、全功能、高品质、连锁医养社区。作为养老行业的先行者，泰康早在2009年率先获得保险机构投资养老社区的试点资格。目前泰康之家养老社区已在北京、上海、广州、成都、苏州、武汉、深圳、重庆、南京、三亚、杭州、南昌、厦门、沈阳、长沙、南宁、宁波、合肥、郑州、青岛、福州、温州、天津、济南、呼和浩特、昆明、佛山27座核心城市布局，成为全国最大的高品质连锁养老集团之一。社区居民可在各城市间“迁徙”度假，享受旅居养老生活的幸福时光。</p>', '约8万平米', '2023年07月', '18977886699', '117.272955', '31.705404');
-INSERT INTO `nurse_house` VALUES ('5', '光明老年护理院', '2500元起/月', 'http://localhost:9090/files/1704945418199-微信截图_20240103155915.png', '安徽 ▪ 合肥 ▪ 包河区 贵阳路与云南路交叉口东北侧', '11', '[\"医养结合\",\"私人定制\",\"连锁品牌\",\"餐饮丰富\"]', '2200个', '民营', '养老社区', '<h3><p>光明老年护理院</p><p><br/></p></h3><p>一期于2023年7月投入使用。占地面积约8 万平米，地上建筑面积约16万平米，可提供约2200个养老单元，配置二级康复医院和约110张医疗床位。社区开业后，可为自理、半自理、失能、认知症的长辈提供高品质的养老服务。</p><p>泰康之家·徽园位于安徽省的政治、经济、金融、文化中心——合肥滨湖新区的金融后台区板块，临近中国第五大淡水湖巢湖之滨。项目区位优越、配套成熟，景观资源良好，紧临大型城市绿化景观带及地块5号线终点站，周边环绕高品质住宅区、国际学校、金融机构总部等。</p><h3><p><img src=\"https://www.yanglaocn.com/images/upload/img/2023/01_13/5a33f6a8d217959b3678ae41508c9129.png\" alt=\"泰康之家·徽园机构介绍\"/></p></h3><p>泰康之家是专注养老、护理、康复实体建设运营和创新服务的专业品牌，采用持续照护模式，独创医养结合特色，打造大规模、全功能、高品质、连锁医养社区。作为养老行业的先行者，泰康早在2009年率先获得保险机构投资养老社区的试点资格。目前泰康之家养老社区已在北京、上海、广州、成都、苏州、武汉、深圳、重庆、南京、三亚、杭州、南昌、厦门、沈阳、长沙、南宁、宁波、合肥、郑州、青岛、福州、温州、天津、济南、呼和浩特、昆明、佛山27座核心城市布局，成为全国最大的高品质连锁养老集团之一。社区居民可在各城市间“迁徙”度假，享受旅居养老生活的幸福时光。</p>', '约8万平米', '2023年07月', '18977886699', '117.272955', '31.705404');
-INSERT INTO `nurse_house` VALUES ('6', '九久夕阳红养老集团', '3500元起/月', 'http://localhost:9090/files/1704945418199-微信截图_20240103155915.png', '安徽 ▪ 合肥 ▪ 包河区 贵阳路与云南路交叉口东北侧', '10', '[\"医养结合\",\"私人定制\",\"连锁品牌\",\"餐饮丰富\"]', '2200个', '民营', '养老社区', '<h1>九久夕阳红养老集团</h1><p>一期于2023年7月投入使用。占地面积约8 万平米，地上建筑面积约16万平米，可提供约2200个养老单元，配置二级康复医院和约110张医疗床位。社区开业后，可为自理、半自理、失能、认知症的长辈提供高品质的养老服务。</p><p>泰康之家·徽园位于安徽省的政治、经济、金融、文化中心——合肥滨湖新区的金融后台区板块，临近中国第五大淡水湖巢湖之滨。项目区位优越、配套成熟，景观资源良好，紧临大型城市绿化景观带及地块5号线终点站，周边环绕高品质住宅区、国际学校、金融机构总部等。</p><h3><p><img src=\"https://www.yanglaocn.com/images/upload/img/2023/01_13/5a33f6a8d217959b3678ae41508c9129.png\" alt=\"泰康之家·徽园机构介绍\"/></p></h3><p>泰康之家是专注养老、护理、康复实体建设运营和创新服务的专业品牌，采用持续照护模式，独创医养结合特色，打造大规模、全功能、高品质、连锁医养社区。作为养老行业的先行者，泰康早在2009年率先获得保险机构投资养老社区的试点资格。目前泰康之家养老社区已在北京、上海、广州、成都、苏州、武汉、深圳、重庆、南京、三亚、杭州、南昌、厦门、沈阳、长沙、南宁、宁波、合肥、郑州、青岛、福州、温州、天津、济南、呼和浩特、昆明、佛山27座核心城市布局，成为全国最大的高品质连锁养老集团之一。社区居民可在各城市间“迁徙”度假，享受旅居养老生活的幸福时光。</p>', '约8万平米', '2023年07月', '18977886699', '117.272955', '31.705404');
-INSERT INTO `nurse_house` VALUES ('7', '泰康之家·徽园', '3500元起/月', 'http://localhost:9090/files/1704945418199-微信截图_20240103155915.png', '安徽 ▪ 合肥 ▪ 包河区 贵阳路与云南路交叉口东北侧', '17', '[\"医养结合\",\"私人定制\",\"连锁品牌\",\"餐饮丰富\"]', '2200个', '民营', '养老社区', '<h3>泰康之家·徽园</h3><p>一期于2023年7月投入使用。占地面积约8 万平米，地上建筑面积约16万平米，可提供约2200个养老单元，配置二级康复医院和约110张医疗床位。社区开业后，可为自理、半自理、失能、认知症的长辈提供高品质的养老服务。</p><p>泰康之家·徽园位于安徽省的政治、经济、金融、文化中心——合肥滨湖新区的金融后台区板块，临近中国第五大淡水湖巢湖之滨。项目区位优越、配套成熟，景观资源良好，紧临大型城市绿化景观带及地块5号线终点站，周边环绕高品质住宅区、国际学校、金融机构总部等。</p><h3><p><img src=\"https://www.yanglaocn.com/images/upload/img/2023/01_13/5a33f6a8d217959b3678ae41508c9129.png\" alt=\"泰康之家·徽园机构介绍\"/></p></h3><p>泰康之家是专注养老、护理、康复实体建设运营和创新服务的专业品牌，采用持续照护模式，独创医养结合特色，打造大规模、全功能、高品质、连锁医养社区。作为养老行业的先行者，泰康早在2009年率先获得保险机构投资养老社区的试点资格。目前泰康之家养老社区已在北京、上海、广州、成都、苏州、武汉、深圳、重庆、南京、三亚、杭州、南昌、厦门、沈阳、长沙、南宁、宁波、合肥、郑州、青岛、福州、温州、天津、济南、呼和浩特、昆明、佛山27座核心城市布局，成为全国最大的高品质连锁养老集团之一。社区居民可在各城市间“迁徙”度假，享受旅居养老生活的幸福时光。</p>', '约8万平米', '2023年07月', '18977886699', '117.272955', '31.705404');
-
--- ----------------------------
 -- Table structure for orders
 -- ----------------------------
 DROP TABLE IF EXISTS `orders`;
@@ -324,6 +292,7 @@ CREATE TABLE `orders` (
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '物品名称',
   `descr` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '描述',
   `img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '物品图片',
+  `certificate` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '证书地址',
   `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '物品类型',
   `weight` double(10,2) DEFAULT NULL COMMENT '物品重量',
   `price` int DEFAULT NULL COMMENT '小费',
@@ -337,21 +306,22 @@ CREATE TABLE `orders` (
   `target_id` int DEFAULT NULL COMMENT '送货地址ID',
   `comment` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '订单备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='订单信息';
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='订单信息';
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
-INSERT INTO `orders` VALUES ('19', '1727868740552798208', '买包米', '买包米', 'http://localhost:9090/files/1700790978696-CxCguWQjx8nP7cd21a9de1f499f2a532d7b9cc928f02.png', '代拿物品', '0.10', '5', '31', null, '2023-11-24 09:56:24', '2023-11-24 09:56:24', null, '已取消', '8', '7', '热的');
-INSERT INTO `orders` VALUES ('20', '1727869169172959232', '扫地', '扫地', 'http://localhost:9090/files/1700791084963-fDmaVRxeLnGd203bfcffb7b80e708090cbdb8fcd671b.png', '打扫卫生', '0.20', '5', '2', '31', '2023-11-24 09:56:24', '2023-11-24 09:58:06', '2024-03-21 10:34:36', '已完成', '8', '7', null);
-INSERT INTO `orders` VALUES ('21', '1727873257063280640', '高奶奶很无聊，需要陪聊', '高奶奶很无聊，需要陪聊', 'http://localhost:9090/files/1700792058969-KrQtpRLTlh1y21b37635be9790fed814b1f298173089.png', '空巢老人陪聊', '0.10', '6', '2', '31', null, '2024-03-21 10:34:36', '2024-03-21 16:23:47', '已完成', '8', '7', '1');
-INSERT INTO `orders` VALUES ('22', '1727912858976935936', '擦玻璃', '擦玻璃', 'http://localhost:9090/files/1700801501337-qQNVRmk2Y2jeacb88604e05a527a2e8a5f348549ac51.png', '打扫卫生', '1.00', '5', '2', '31', null, '2023-11-24 12:51:43', '2023-11-24 12:51:50', '已完成', '8', '7', '1');
-INSERT INTO `orders` VALUES ('23', '1727914789656989696', '楼下买包烟', '楼下买包烟', 'http://localhost:9090/files/1700801931808-00cUgnNoLY2c7d94a44c7f66436ec4e45e0369e4b764.jpg', '代拿物品', '0.20', '10', '24', '1', null, '2023-11-24 12:59:23', '2023-11-24 12:59:40', '已取消', '12', '13', '我爱你小雨');
-INSERT INTO `orders` VALUES ('24', '1727915204498821120', '楼下买瓶酒', '楼下买瓶酒', 'http://localhost:9090/files/1700802061505-s6M2juhZRGhl650871f9e0db400e0e2b1329ca9049f4.png', '代拿物品', '1.00', '6', '31', null, null, '2023-11-24 13:01:02', null, '已取消', '13', '12', '11');
-INSERT INTO `orders` VALUES ('25', '1727915386980405248', '李奶奶很无聊，需要陪聊', '李奶奶很无聊，需要陪聊', 'http://localhost:9090/files/1700802104212-SMy1gIojSi61b96dd2c8e1b554ea99f00bf8d8f9e04d.jpg', '空巢老人陪聊', '2.00', '6', '24', '31', null, '2024-03-21 10:34:36', '2024-03-21 20:22:23', '已接单', '13', '12', '22');
-INSERT INTO `orders` VALUES ('26', '1770763093540904960', 'wp', 'des', null, '代拿物品', '1.20', '1', '31', null, null, '2024-03-21 18:43:15', null, '已取消', '16', '15', null);
-INSERT INTO `orders` VALUES ('27', '1770764854972424192', 'ww', 'des', null, '代拿快递', '11.00', '3', '31', null, null, '2024-03-21 18:50:15', null, '已取消', '16', '15', null);
-INSERT INTO `orders` VALUES ('29', '1770787696854216704', '德萨', '多少', null, '代拿快递', '1.00', '2', '31', '2', null, '2024-03-21 20:21:01', '2024-03-21 20:27:04', '已完成', '16', '15', null);
+INSERT INTO `orders` VALUES ('19', '1727868740552798208', '买包米', '买包米', 'http://localhost:9090/files/1700790978696-CxCguWQjx8nP7cd21a9de1f499f2a532d7b9cc928f02.png', null, '代拿物品', '0.10', '5', '31', null, '2023-11-24 09:56:24', '2023-11-24 09:56:24', null, '已取消', '8', '7', '热的');
+INSERT INTO `orders` VALUES ('20', '1727869169172959232', '扫地', '扫地', 'http://localhost:9090/files/1700791084963-fDmaVRxeLnGd203bfcffb7b80e708090cbdb8fcd671b.png', null, '打扫卫生', '0.20', '5', '2', '31', '2023-11-24 09:56:24', '2023-11-24 09:58:06', '2024-03-21 10:34:36', '已完成', '8', '7', null);
+INSERT INTO `orders` VALUES ('21', '1727873257063280640', '高奶奶很无聊，需要陪聊', '高奶奶很无聊，需要陪聊', 'http://localhost:9090/files/1700792058969-KrQtpRLTlh1y21b37635be9790fed814b1f298173089.png', null, '空巢老人陪聊', '0.10', '6', '2', '31', null, '2024-03-21 10:34:36', '2024-03-21 16:23:47', '已完成', '8', '7', '1');
+INSERT INTO `orders` VALUES ('22', '1727912858976935936', '擦玻璃', '擦玻璃', 'http://localhost:9090/files/1700801501337-qQNVRmk2Y2jeacb88604e05a527a2e8a5f348549ac51.png', null, '打扫卫生', '1.00', '5', '2', '31', null, '2023-11-24 12:51:43', '2023-11-24 12:51:50', '已完成', '8', '7', '1');
+INSERT INTO `orders` VALUES ('23', '1727914789656989696', '楼下买包烟', '楼下买包烟', 'http://localhost:9090/files/1700801931808-00cUgnNoLY2c7d94a44c7f66436ec4e45e0369e4b764.jpg', null, '代拿物品', '0.20', '10', '24', '1', null, '2023-11-24 12:59:23', '2023-11-24 12:59:40', '已取消', '12', '13', '我爱你小雨');
+INSERT INTO `orders` VALUES ('24', '1727915204498821120', '楼下买瓶酒', '楼下买瓶酒', 'http://localhost:9090/files/1700802061505-s6M2juhZRGhl650871f9e0db400e0e2b1329ca9049f4.png', null, '代拿物品', '1.00', '6', '31', null, null, '2023-11-24 13:01:02', null, '已取消', '13', '12', '11');
+INSERT INTO `orders` VALUES ('25', '1727915386980405248', '李奶奶很无聊，需要陪聊', '李奶奶很无聊，需要陪聊', 'http://localhost:9090/files/1700802104212-SMy1gIojSi61b96dd2c8e1b554ea99f00bf8d8f9e04d.jpg', null, '空巢老人陪聊', '2.00', '6', '24', '31', null, '2024-03-21 10:34:36', '2024-03-21 20:22:23', '已接单', '13', '12', '22');
+INSERT INTO `orders` VALUES ('26', '1770763093540904960', 'wp', 'des', null, null, '代拿物品', '1.20', '1', '31', null, null, '2024-03-21 18:43:15', null, '已取消', '16', '15', null);
+INSERT INTO `orders` VALUES ('27', '1770764854972424192', 'ww', 'des', null, null, '代拿快递', '11.00', '3', '31', null, null, '2024-03-21 18:50:15', null, '已取消', '16', '15', null);
+INSERT INTO `orders` VALUES ('29', '1770787696854216704', '德萨', '多少', null, null, '代拿快递', '1.00', '2', '31', '2', null, '2024-03-21 20:21:01', '2024-03-21 20:27:04', '已完成', '16', '15', null);
+INSERT INTO `orders` VALUES ('30', '0x729890bba0441b988b322058dd10b82122ef15f6', 'bt', 'des', null, 'http://localhost:9090/files/1712849070802-0x729890bba0441b988b322058dd10b82122ef15f6.png', '代买零食', '2.00', '0', '32', '31', null, '2024-04-11 22:13:46', '2024-04-11 22:54:54', '已完成', '16', '17', null);
 
 -- ----------------------------
 -- Table structure for records
@@ -366,7 +336,7 @@ CREATE TABLE `records` (
   `time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '时间',
   `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '类型',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='收支明细';
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='收支明细';
 
 -- ----------------------------
 -- Records of records
@@ -399,6 +369,17 @@ INSERT INTO `records` VALUES ('32', '审核发放', '70', '2', null, '2024-03-21
 INSERT INTO `records` VALUES ('33', '德萨', '2', '2', null, '2024-03-21 20:30:15', '服务');
 INSERT INTO `records` VALUES ('34', '高奶奶很无聊，需要陪聊', '6', '2', '31', '2024-03-21 20:44:30', '服务');
 INSERT INTO `records` VALUES ('35', '扫地', '5', '2', '31', '2024-03-21 20:44:37', '服务');
+INSERT INTO `records` VALUES ('36', '审核发放', '0', '0', '33', '2024-04-10 21:09:09', '发放');
+INSERT INTO `records` VALUES ('37', '审核发放', '70', '0', '32', '2024-04-11 22:12:49', '发放');
+INSERT INTO `records` VALUES ('38', 'bt', '3', '32', '31', '2024-04-11 22:55:16', '服务');
+INSERT INTO `records` VALUES ('39', 'bt', '0', '32', '31', '2024-04-11 23:09:48', '服务');
+INSERT INTO `records` VALUES ('40', 'bt', '0', '32', '31', '2024-04-11 23:15:00', '服务');
+INSERT INTO `records` VALUES ('41', 'bt', '0', '32', '31', '2024-04-11 23:16:21', '服务');
+INSERT INTO `records` VALUES ('42', 'bt', '0', '32', '31', '2024-04-11 23:17:36', '服务');
+INSERT INTO `records` VALUES ('43', 'bt', '0', '32', '31', '2024-04-11 23:19:43', '服务');
+INSERT INTO `records` VALUES ('44', 'bt', '0', '32', '31', '2024-04-11 23:21:48', '服务');
+INSERT INTO `records` VALUES ('45', 'bt', '0', '32', '31', '2024-04-11 23:22:52', '服务');
+INSERT INTO `records` VALUES ('46', 'bt', '0', '32', '31', '2024-04-11 23:24:30', '服务');
 
 -- ----------------------------
 -- Table structure for reserve
@@ -461,6 +442,7 @@ CREATE TABLE `user` (
   `id_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '身份证号',
   `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '电话',
   `account_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '资金账户',
+  `weid` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'weid',
   `account` int DEFAULT '0' COMMENT '余额',
   `available_funds` int DEFAULT '0' COMMENT '可用资金',
   `register_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '注册时间',
@@ -468,27 +450,27 @@ CREATE TABLE `user` (
   `update_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
   `status` tinyint DEFAULT NULL COMMENT '状态：1.正常 2.审核中 3.冻结 4.删除 5.审核未通过',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='用户表';
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'abc', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇', 'http://localhost:9090/files/1700709015974-2GLXt4Nzpr0T99915b5d3c7d49851528fb541fada677.png', 'USER', '65', '男', null, '13766775588', null, '50', null, '2024-03-19 21:31:19', '2024-03-19 21:31:19', '2024-03-19 21:31:19', '1');
-INSERT INTO `user` VALUES ('2', 'lisi', '$2a$10$PeRR/QbaXYKO04zLq4bbzOFx6yjTt8G8FGeilMlv2iN4z4JRuJHIS', '李四', 'http://localhost:9090/files/1710728549852-1699934583069-微信截图_20231018172208.png', 'USER', '74', '女', null, '123', null, '70', '70', '2024-03-21 20:45:17', '2024-03-21 20:45:17', '2024-03-21 20:45:17', '1');
-INSERT INTO `user` VALUES ('12', 'aaa7', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四7', 'http://localhost:9090/files/1710728549852-1699934583069-微信截图_20231018172208.png', 'USER', '74', '女', null, '123', null, '70', '70', '2024-03-20 20:24:48', '2024-03-20 20:24:48', '2024-03-20 20:24:48', '1');
-INSERT INTO `user` VALUES ('13', 'abc8', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇8', null, 'USER', '64', '男', '4321', '1234', null, '30', '30', '2024-03-20 20:24:35', '2024-03-20 20:24:35', '2024-03-20 20:24:35', '1');
-INSERT INTO `user` VALUES ('14', 'aaa9', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四9', null, 'USER', '59', '男', null, null, null, '0', null, '2024-03-19 21:29:33', '2024-03-19 21:29:33', '2024-03-24 15:54:44', '1');
-INSERT INTO `user` VALUES ('15', 'abc10', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇10', null, 'USER', '79', '男', null, null, null, '80', '80', '2024-03-20 20:25:03', '2024-03-20 20:25:03', '2024-03-20 20:25:03', '1');
-INSERT INTO `user` VALUES ('16', 'aaa11', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四11', null, 'USER', '80', ' 女', null, null, null, '120', '120', '2024-03-20 20:25:06', '2024-03-20 20:25:06', '2024-03-20 20:25:06', '1');
-INSERT INTO `user` VALUES ('17', 'abc12', '$2a$10$cMZTOVBbauCC7hEIC1LpVuz8va4SgkRW5LbvjJmjnwA2/LwHOzrCy', '王雨薇12', null, 'USER', null, '男', null, '123', null, '1000', null, '2024-03-19 20:43:17', '2024-03-19 20:33:09', '2024-03-19 20:43:17', '1');
-INSERT INTO `user` VALUES ('18', 'aaa13', '$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四13', null, 'USER', null, '男', null, '123', null, '1000', null, '2024-03-19 20:54:30', '2024-03-19 20:54:30', '2024-03-19 20:54:30', '1');
-INSERT INTO `user` VALUES ('19', 'abc14', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇14', null, 'USER', null, '女', null, null, null, '1000', null, '2024-03-19 20:01:37', '2024-03-19 20:01:37', '2024-03-19 20:01:37', '1');
-INSERT INTO `user` VALUES ('20', 'aaa15', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四15', null, 'USER', null, '男', null, null, null, '1000', null, '2024-03-19 20:01:37', '2024-03-19 20:01:37', '2024-03-19 20:01:37', '1');
-INSERT INTO `user` VALUES ('21', 'abc16', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇16', null, 'USER', null, '男', null, null, null, '1000', null, '2024-03-19 20:01:38', '2024-03-19 20:01:38', '2024-03-19 20:01:38', '1');
-INSERT INTO `user` VALUES ('22', 'abt', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', 'abt', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, null, null, null, null, '1000', null, '2024-03-19 20:01:39', '2024-03-19 20:01:39', '2024-03-19 20:01:39', '1');
-INSERT INTO `user` VALUES ('23', 'ccc', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', 'ccc', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, null, null, null, null, '1000', null, '2024-03-19 20:01:39', '2024-03-19 20:01:39', '2024-03-19 20:01:39', '1');
-INSERT INTO `user` VALUES ('24', 'ddd', '$2a$10$OzdrIw3C7f.JyLH.r9QqruUf8qJdOFIDkT0er4HOrOKsj4k/zZyO2', '李大爷', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, null, null, null, null, '10006', null, '2024-03-20 19:41:02', '2024-03-20 19:41:02', '2024-03-21 19:30:51', '1');
-INSERT INTO `user` VALUES ('29', 'test', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', 'test', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, '男', '4321', '1234', null, '0', '0', '2024-03-20 21:01:29', '2024-03-20 21:01:29', '2024-03-20 21:01:29', '2');
-INSERT INTO `user` VALUES ('30', 'haha', '$2a$10$9yfEpv0SFrQC/MLRTHespuBCIX07m1qU/yzLIE9Fy8jYxNPe6GFPy', 'haha', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, '女', '321321', '123123', null, '0', '0', '2024-03-19 15:57:28', null, '2024-03-19 15:57:28', '2');
-INSERT INTO `user` VALUES ('31', 'wanglaowu', '$2a$10$PeRR/QbaXYKO04zLq4bbzOFx6yjTt8G8FGeilMlv2iN4z4JRuJHIS', '王老五', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', '73', '男', '13888', '13666', '', '70', '70', '2024-04-06 00:26:31', '2024-04-06 00:26:31', '2024-04-06 00:26:31', '1');
-INSERT INTO `user` VALUES ('32', 'zhaoliu', '$2a$10$PeRR/QbaXYKO04zLq4bbzOFx6yjTt8G8FGeilMlv2iN4z4JRuJHIS', 'zhaoliu', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, null, null, null, null, '0', '0', '2024-03-21 18:46:52', '2024-03-21 18:46:52', '2024-03-21 18:46:52', '2');
+INSERT INTO `user` VALUES ('1', 'abc', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇', 'http://localhost:9090/files/1700709015974-2GLXt4Nzpr0T99915b5d3c7d49851528fb541fada677.png', 'USER', '65', '男', null, '13766775588', null, null, '50', null, '2024-03-19 21:31:19', '2024-03-19 21:31:19', '2024-03-19 21:31:19', '1');
+INSERT INTO `user` VALUES ('2', 'lisi', '$2a$10$PeRR/QbaXYKO04zLq4bbzOFx6yjTt8G8FGeilMlv2iN4z4JRuJHIS', '李四', 'http://localhost:9090/files/1710728549852-1699934583069-微信截图_20231018172208.png', 'USER', '74', '女', null, '123', null, null, '70', '70', '2024-03-21 20:45:17', '2024-03-21 20:45:17', '2024-03-21 20:45:17', '1');
+INSERT INTO `user` VALUES ('12', 'aaa7', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四7', 'http://localhost:9090/files/1710728549852-1699934583069-微信截图_20231018172208.png', 'USER', '74', '女', null, '123', null, null, '70', '70', '2024-03-20 20:24:48', '2024-03-20 20:24:48', '2024-03-20 20:24:48', '1');
+INSERT INTO `user` VALUES ('13', 'abc8', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇8', 'http://localhost:9090/files/1712842001036-1699934583069-微信截图_20231018172208.png', 'USER', '64', '男', '4321', '1234', null, null, '30', '30', '2024-03-20 20:24:35', '2024-03-20 20:24:35', '2024-04-11 21:26:47', '1');
+INSERT INTO `user` VALUES ('14', 'aaa9', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四9', null, 'USER', '59', '男', null, null, null, null, '0', null, '2024-03-19 21:29:33', '2024-03-19 21:29:33', '2024-03-24 15:54:44', '1');
+INSERT INTO `user` VALUES ('15', 'abc10', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇10', null, 'USER', '79', '男', null, null, null, null, '80', '80', '2024-03-20 20:25:03', '2024-03-20 20:25:03', '2024-03-20 20:25:03', '1');
+INSERT INTO `user` VALUES ('16', 'aaa11', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四11', null, 'USER', '80', ' 女', null, null, null, null, '120', '120', '2024-03-20 20:25:06', '2024-03-20 20:25:06', '2024-03-20 20:25:06', '1');
+INSERT INTO `user` VALUES ('17', 'abc12', '$2a$10$cMZTOVBbauCC7hEIC1LpVuz8va4SgkRW5LbvjJmjnwA2/LwHOzrCy', '王雨薇12', null, 'USER', null, '男', null, '123', null, null, '1000', null, '2024-03-19 20:43:17', '2024-03-19 20:33:09', '2024-03-19 20:43:17', '1');
+INSERT INTO `user` VALUES ('18', 'aaa13', '$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四13', null, 'USER', null, '男', null, '123', null, null, '1000', null, '2024-03-19 20:54:30', '2024-03-19 20:54:30', '2024-03-19 20:54:30', '1');
+INSERT INTO `user` VALUES ('19', 'abc14', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇14', null, 'USER', null, '女', null, null, null, null, '1000', null, '2024-04-10 21:13:48', '2024-04-10 21:13:48', '2024-04-10 21:13:48', '1');
+INSERT INTO `user` VALUES ('20', 'aaa15', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四15', null, 'USER', null, '男', null, null, null, null, '1000', null, '2024-04-10 21:13:51', '2024-04-10 21:13:51', '2024-04-10 21:13:51', '1');
+INSERT INTO `user` VALUES ('21', 'abc16', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇16', null, 'USER', null, '男', null, null, null, null, '1000', null, '2024-04-10 21:13:53', '2024-04-10 21:13:53', '2024-04-10 21:13:53', '1');
+INSERT INTO `user` VALUES ('22', 'abt', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', 'abt', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, null, null, null, null, null, '1000', null, '2024-03-19 20:01:39', '2024-03-19 20:01:39', '2024-03-19 20:01:39', '1');
+INSERT INTO `user` VALUES ('23', 'ccc', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', 'ccc', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, null, null, null, null, null, '1000', null, '2024-03-19 20:01:39', '2024-03-19 20:01:39', '2024-03-19 20:01:39', '1');
+INSERT INTO `user` VALUES ('24', 'ddd', '$2a$10$OzdrIw3C7f.JyLH.r9QqruUf8qJdOFIDkT0er4HOrOKsj4k/zZyO2', '李大爷', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, null, null, null, null, null, '10006', null, '2024-03-20 19:41:02', '2024-03-20 19:41:02', '2024-03-21 19:30:51', '1');
+INSERT INTO `user` VALUES ('29', 'test', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', 'test', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, '男', '4321', '1234', null, null, '0', '0', '2024-03-20 21:01:29', '2024-03-20 21:01:29', '2024-03-20 21:01:29', '2');
+INSERT INTO `user` VALUES ('30', 'haha', '$2a$10$9yfEpv0SFrQC/MLRTHespuBCIX07m1qU/yzLIE9Fy8jYxNPe6GFPy', 'haha', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, '女', '321321', '123123', null, null, '0', '0', '2024-03-19 15:57:28', null, '2024-03-19 15:57:28', '2');
+INSERT INTO `user` VALUES ('31', 'wanglaowu', '$2a$10$PeRR/QbaXYKO04zLq4bbzOFx6yjTt8G8FGeilMlv2iN4z4JRuJHIS', '王老五', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', '73', '男', '13888', '13666', '0xf592a5f36524261964048543c8736b9f1c94157e', null, '73', '73', '2024-04-11 23:10:01', '2024-04-11 23:10:01', '2024-04-11 23:24:30', '1');
+INSERT INTO `user` VALUES ('32', 'zhaoliu', '$2a$10$PeRR/QbaXYKO04zLq4bbzOFx6yjTt8G8FGeilMlv2iN4z4JRuJHIS', 'zhaoliu', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', '71', '男', null, null, '0xc05aec7a8e5e67254456535f69614389a76d1afe', 'did:weid:1000:0x5482ef8d0e0d08d2bd6d8e562d56d5712e334ddf', '67', '67', '2024-04-11 23:22:43', '2024-04-11 23:22:44', '2024-04-11 23:24:30', '1');
