@@ -22,6 +22,7 @@ com\example\utils\BlockChainUtils.class
 com\example\entity\Notice.class
 com\example\controller\NewsController.class
 com\example\controller\NoticeController.class
+com\example\utils\PythonUtils.class
 com\example\common\enums\AdminAddressEnum.class
 com\example\SpringbootApplication.class
 com\example\common\enums\ResultCodeEnum.class

@@ -28,6 +28,8 @@ public class Orders {
     private String time;
     /** 接单时间 */
     private String acceptTime;
+    /** 接单时间 */
+    private String finishTime;
     /** 订单状态 */
     private String status;
     /** 发起人联系ID */
@@ -214,6 +216,14 @@ public class Orders {
         this.acceptTime = acceptTime;
     }
 
+    public String getFinishTime() {
+        return finishTime;
+    }
+
+    public void setFinishTime(String finishTime) {
+        this.finishTime = finishTime;
+    }
+
     public String getStatus() {
         return status;
     }
@@ -263,6 +273,7 @@ public class Orders {
                 ", serveTime='" + serveTime + '\'' +
                 ", time='" + time + '\'' +
                 ", acceptTime='" + acceptTime + '\'' +
+                ", finishTime='" + finishTime + '\'' +
                 ", status='" + status + '\'' +
                 ", addressId=" + addressId +
                 ", targetId=" + targetId +

@@ -1,45 +1,18 @@
 package com.example;
 
-import cn.hutool.core.io.FileUtil;
-import cn.hutool.core.thread.ThreadUtil;
-import com.example.common.Result;
-import com.example.controller.FileController;
 import com.example.entity.Orders;
-import com.example.entity.User;
 import com.example.service.OrdersService;
-import com.example.service.UserService;
 import com.example.utils.BlockChainUtils;
 import com.example.utils.ImageFileUtils;
+import com.example.utils.PythonUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.junit.jupiter.api.Test;
 
-import org.mockito.internal.matchers.Or;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.mock.web.MockMultipartFile;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.client.RestTemplate;
 import com.example.common.enums.AdminAddressEnum;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import javax.imageio.ImageIO;
-import javax.xml.crypto.Data;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
-import java.util.Date;
-import java.util.List;
-
-import static com.example.utils.ImageFileUtils.*;
 
 @SpringBootTest
 public class TestDemo {
@@ -76,8 +49,8 @@ public class TestDemo {
     @Test
     public void initBalance() throws JsonProcessingException {
         BlockChainUtils blockChainUtils = new BlockChainUtils();
-        String userAddress = "0x5084a427ef51a92f11320db187c73c50691271be";
-        boolean balance = blockChainUtils.initBalance(AdminAddressEnum.ADMIN_ADDRESS_ENUM.getValue(),userAddress,20);
+        String userAddress = "0x67df635fafb1ec1ee6ff64ec2a4869ae295dcd47";
+        boolean balance = blockChainUtils.initBalance(AdminAddressEnum.ADMIN_ADDRESS_ENUM.getValue(),userAddress,70);
         System.out.println(balance);
         int balance1 = blockChainUtils.CheckBalance(userAddress);
         System.out.println(balance1);
@@ -138,7 +111,7 @@ public class TestDemo {
         System.out.println(res2);
         boolean res3 = blockChainUtils.volunteerFinishOrder(acceptUser,orderAddress);
         System.out.println(res3);
-        boolean res4 = blockChainUtils.assessVolunteer(userAddress,orderAddress);
+        String res4 = blockChainUtils.assessVolunteer(userAddress,orderAddress);
         System.out.println(res4);
 
         balance1 = blockChainUtils.CheckBalance(userAddress);
@@ -188,14 +161,18 @@ public class TestDemo {
 //        Result res = fileController.upload(image);
 //        System.out.println(res.getData());
 
-        Orders orders = new Orders();
-        orders.setId(30);
+        Orders orders = ordersService.selectById(30);
         ImageFileUtils imageFileUtils = new ImageFileUtils();
-        String certificate = imageFileUtils.getimage(orders.getOrderNo());
-        orders.setCertificate(certificate);
-        ordersService.updateById(orders);
+        String certificate = imageFileUtils.getimage(orders.getOrderNo(),orders.getOrderNo());
+//        orders.setCertificate(certificate);
+//        ordersService.updateById(orders);
     }
 
 
+    @Test
+    public void PythonRunner(){
+        PythonUtils pythonRunner = new PythonUtils();
+        pythonRunner.runPythonScript(31);
+    }
 
 }

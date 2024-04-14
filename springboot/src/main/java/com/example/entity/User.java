@@ -39,6 +39,8 @@ public class User extends Account {
     private Integer account;
     /** 可用资金 */
     private Integer availableFunds;
+    /** 订单推荐序列 */
+    private String recommendList;
     /** 状态 */
     private Integer status;
 
@@ -146,6 +148,14 @@ public class User extends Account {
         this.availableFunds = availableFunds;
     }
 
+    public String getRecommendList() {
+        return recommendList;
+    }
+
+    public void setRecommendList(String recommendList) {
+        this.recommendList = recommendList;
+    }
+
     public String getIdNumber() {
         return idNumber;
     }
@@ -206,6 +216,7 @@ public class User extends Account {
                 ", weid='" + weid + '\'' +
                 ", account=" + account +
                 ", availableFunds=" + availableFunds +
+                ", recommendList=" + recommendList +
                 ", status=" + status +
                 '}';
     }

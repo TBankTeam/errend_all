@@ -5,7 +5,7 @@
 <mapper namespace="com.example.mapper.OrdersMapper">
 
     <sql id="Base_Column_List">
-        id,order_no,name,descr,img,certificate,type,weight,price,user_id,accept_id,serve_time,time,accept_time,status,address_id,target_id,comment
+        id,order_no,name,descr,img,certificate,type,weight,price,user_id,accept_id,serve_time,time,accept_time,finish_time,status,address_id,target_id,comment
     </sql>
 
     <select id="selectAll" resultType="com.example.entity.Orders">
@@ -55,6 +55,7 @@
             <if test="serveTime != null">serve_time,</if>
             <if test="time != null">time,</if>
             <if test="acceptTime != null">accept_time,</if>
+            <if test="finishTime != null">finish_time,</if>
             <if test="status != null">status,</if>
             <if test="addressId != null">address_id,</if>
             <if test="targetId != null">target_id,</if>
@@ -75,6 +76,7 @@
             <if test="serveTime != null">#{serveTime},</if>
             <if test="time != null">#{time},</if>
             <if test="acceptTime != null">#{acceptTime},</if>
+            <if test="finishTime != null">#{finishTime},</if>
             <if test="status != null">#{status},</if>
             <if test="addressId != null">#{addressId},</if>
             <if test="targetId != null">#{targetId},</if>
@@ -123,6 +125,9 @@
             </if>
             <if test="acceptTime != null">
                 accept_time = #{acceptTime},
+            </if>
+            <if test="finishTime != null">
+                finish_time = #{finishTime},
             </if>
             <if test="status != null">
                 status = #{status},

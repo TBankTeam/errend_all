@@ -1,6 +1,9 @@
 package com.example.utils;
 import com.example.common.Result;
 import com.example.controller.FileController;
+import com.example.entity.Account;
+import com.example.entity.User;
+import com.example.service.UserService;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.WriterException;
@@ -11,17 +14,20 @@ import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.web.multipart.MultipartFile;
 
 
+import javax.annotation.Resource;
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 public class ImageFileUtils {
+
 
     // 生成二维码图片
     // text：二维码内容
@@ -52,14 +58,13 @@ public class ImageFileUtils {
             // 渲染二维码
             Graphics2D graphics1 = qrImage.createGraphics();
             // 添加蓝色边框
-            int borderSize = 3; // 边框大小
-            Color myColor = new Color(99, 141, 204); // 红色
+            int borderSize = 10; // 边框大小
+            Color myColor = new Color(12, 0, 5, 255);
             graphics1.setColor(myColor);
             graphics1.fillRect(0, 0, size, borderSize); // 上边框
             graphics1.fillRect(0, 0, borderSize, size); // 左边框
             graphics1.fillRect(size - borderSize, 0, borderSize, size); // 右边框
             graphics1.fillRect(0, size - borderSize, size, borderSize); // 下边框
-
             return qrImage;
         } catch (WriterException e) {
             e.printStackTrace();
@@ -99,45 +104,92 @@ public class ImageFileUtils {
     public static String getimage(String code,String hashcode) throws IOException {
         // 1. 读取原始图片
         BufferedImage image = null;
+        BufferedImage signet = null;
         try {
             image = ImageIO.read(new File("files/bg.png")); // 替换成您的图片路径
+            signet = ImageIO.read(new File("files/signet.png")); // 替换成您的图片路径
+
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        if (image == null) {
+        if (image == null || signet == null) {
             System.err.println("无法读取图片");
             return null;
         }
-        // 2. 在图片上添加透明的二维码
-        String qrText = "感谢您对TBank时间银行的支持"; // 替换成您的二维码文本
-        int qrSize = 100; // 二维码尺寸
+
+
+
+
+
+        // 2. 在图片上添加中文文本，支持手动换行
+
+        Account currentUser = TokenUtils.getCurrentUser();
+
+        String chineseText = "尊敬的" + currentUser.getName() + "先生/女士：";
+        Font font = new Font("楷体", Font.PLAIN, 100); // 替换成所需的字体和大小
+        Color textColor = Color.BLACK; // 文本颜色
+        int textX = image.getWidth() / 12; // 文本左侧的边距
+        int textY = image.getHeight() / 3; // 设置文本的垂直位置
+//        int textWidth = image.getWidth() - 400; // 文本可用的宽度
+        addTextToImage(image, chineseText, font, textColor, textX, textY);
+
+        String qrText = chineseText + "\n";
+
+        chineseText = "    感谢您对TBank时间银行的支持,\n" +
+                "在这个充满温暖和关爱的社区中，您们\n"+
+                "的无私奉献让每一个角落都充满了希望\n"+
+                "和光芒。传递正能量，有爱就有希望！";
+        font = new Font("楷体", Font.PLAIN, 120); // 替换成所需的字体和大小
+        textX = image.getWidth() / 12; // 文本左侧的边距
+        textY = image.getHeight() * 2 / 5; // 设置文本的垂直位置
+//        int textWidth = image.getWidth() - 400; // 文本可用的宽度
+        addTextToImage(image, chineseText, font, textColor, textX, textY);
+
+        qrText = qrText + chineseText + "\n";
+
+        code = "证书编号：" + code;
+        textX = image.getWidth() / 10; // 文本左侧的边距
+        textY = image.getHeight() * 9 / 10; // 设置文本的垂直位置
+        font = new Font("楷体", Font.PLAIN, 40);
+        addTextToImage(image, code, font, textColor, textX, textY);
+
+        qrText = qrText + code;
+
+        hashcode = "哈希值：" + hashcode;
+        textX = image.getWidth() / 10; // 文本左侧的边距
+        textY = textY + 60; // 设置文本的垂直位置
+        font = new Font("楷体", Font.PLAIN, 40);
+        addTextToImage(image, hashcode, font, textColor, textX, textY);
+
+        qrText = qrText + "\n" + hashcode;
+
+        // 3. 在图片上添加透明的二维码
+        int qrSize = 500; // 二维码尺寸
         BufferedImage qrCodeImage = generateQRCode(qrText, qrSize);
-        int qrX = (image.getWidth() - qrSize) * 5 / 6;
-        int qrY = 660; // 设置二维码的垂直位置
+        int qrX = (image.getWidth() - qrSize) / 10;
+        int qrY = (image.getHeight() - qrSize) * 6 / 7; // 设置二维码的垂直位置
         addImageToImage(image, qrCodeImage, qrX, qrY);
 
-        // 3. 在图片上添加中文文本，支持手动换行
-        String chineseText = "    感谢您对TBank时间银行的支持\n" +
-                "传递正能量，有爱就有希望！";
-        Font font = new Font("微软雅黑", Font.PLAIN, 30); // 替换成所需的字体和大小
-        Color textColor = Color.BLACK; // 文本颜色
-        int textX = 70; // 文本左侧的边距
-        int textY = 200; // 设置文本的垂直位置
-        int textWidth = image.getWidth() - 40; // 文本可用的宽度
-        addTextToImage(image, chineseText, font, textColor, textX, textY);
+        // 4. 在图片上添加透明的印章
+        int sgX = (image.getWidth() - qrSize) * 3 / 4;
+        int sgY = (image.getHeight() - qrSize) * 3 / 4; // 设置印章的垂直位置
+        addImageToImage(image, signet, sgX, sgY);
 
-        chineseText = "证书编号：" + code;
-        textX = 70; // 文本左侧的边距
-        textY = 760; // 设置文本的垂直位置
-        font = new Font("微软雅黑", Font.PLAIN, 11);
-        addTextToImage(image, chineseText, font, textColor, textX, textY);
 
-        chineseText = "哈希值：" + hashcode;
-        textX = 70; // 文本左侧的边距
-        textY = 780; // 设置文本的垂直位置
-        font = new Font("微软雅黑", Font.PLAIN, 11);
-        addTextToImage(image, chineseText, font, textColor, textX, textY);
+        LocalDate currentDate = LocalDate.now();
+
+        // 获取年、月、日
+        int year = currentDate.getYear();
+        int month = currentDate.getMonthValue();
+        int day = currentDate.getDayOfMonth();
+
+        String date = year + " 年 " + month + " 月 " + day + " 日";
+        textX = 1500; // 文本左侧的边距
+        textY = 2825; // 设置文本的垂直位置
+        font = new Font("楷体", Font.BOLD, 80);
+        addTextToImage(image, date, font, textColor, textX, textY);
+
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ImageIO.write(image, "png", baos);

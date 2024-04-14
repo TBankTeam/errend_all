@@ -11,6 +11,7 @@ import com.example.exception.CustomException;
 import com.example.mapper.OrdersMapper;
 import com.example.utils.BlockChainUtils;
 import com.example.utils.ImageFileUtils;
+import com.example.utils.PythonUtils;
 import com.example.utils.TokenUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.pagehelper.PageHelper;
@@ -21,6 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -115,6 +117,15 @@ public class OrdersService {
             String certificate = imageFileUtils.getimage(orders.getOrderNo(),hashcode);
             orders.setCertificate(certificate);
 
+            LocalDate currentDate = LocalDate.now();
+
+            // 获取年、月、日
+            int year = currentDate.getYear();
+            int month = currentDate.getMonthValue();
+            int day = currentDate.getDayOfMonth();
+            String finishTime = year + " 年 " + month + " 月 " + day + " 日";
+            orders.setFinishTime(finishTime);
+            log.error("finishTime:" + finishTime);
             log.error("certificate:" + certificate);
 
             // 记录收支明细
@@ -178,9 +189,28 @@ public class OrdersService {
             ordersList.addAll(ordersList1);
             ordersList.addAll(ordersList2);
         }else if (orders.getStatus().equals("待接单")){
-            ordersList = ordersMapper.selectAll(orders).stream()
-                    .filter(orders1 -> !orders1.getUserId().equals(currentUser.getId()))
-                    .collect(Collectors.toList());
+            //生成推荐订单序列
+            PythonUtils pythonRunner = new PythonUtils();
+            pythonRunner.runPythonScript(currentUser.getId());
+            String orderNums = userService.selectById(currentUser.getId()).getRecommendList();
+            if(orderNums != null && !orderNums.equals("")){
+                String[] numbersArray = orderNums.split(",");
+                // 创建一个与字符串数组长度相同的整数数组
+                int[] intArray = new int[numbersArray.length];
+                // 遍历字符串数组，将每个字符串转换为整数，并存储到整数数组中
+                for (int i = 0; i < numbersArray.length; i++) {
+                    intArray[i] = Integer.parseInt(numbersArray[i]);
+                }
+                log.error("orderNums");
+                for (int i = 0; i < intArray.length; i++) {
+                    Orders orders1 = ordersMapper.selectById(intArray[i]);
+                    ordersList.add(orders1);
+                }
+            }else {
+                ordersList = ordersMapper.selectAll(orders).stream()
+                        .filter(orders1 -> !orders1.getUserId().equals(currentUser.getId()))
+                        .collect(Collectors.toList());
+            }
             for (Orders order : ordersList) {
                 String time = order.getTime();
                 Date date = new Date();
