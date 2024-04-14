@@ -206,8 +206,8 @@ export default {
       this.$confirm('您确定删除吗？', '确认删除', {type: "warning"}).then(response => {
         this.$request.delete('/user/delete/' + id).then(res => {
           if (res.code === '200') {   // 表示操作成功
-            this.$message.success('操作成功')
             this.load(1)
+            this.$message.success('操作成功')
           } else {
             this.$message.error(res.msg)  // 弹出错误的信息
           }

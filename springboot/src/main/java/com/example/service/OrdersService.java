@@ -260,12 +260,12 @@ public class OrdersService {
         PageHelper.startPage(pageNum, pageSize);
         List<Orders> res = ordersMapper.selectAll(orders);
         List<Orders> list = new ArrayList<>();
-        for (int i = 0; i < res.size(); i++) {
-            if(!res.get(i).getStatus().equals(OrderStatusEnum.NO_EXAMINE.getValue())){
-                list.add(res.get(i));
-            }
-        }
-        return PageInfo.of(list);
+//        for (int i = 0; i < res.size(); i++) {
+//            if(!res.get(i).getStatus().equals(OrderStatusEnum.NO_EXAMINE.getValue())){
+//                list.add(res.get(i));
+//            }
+//        }
+        return PageInfo.of(res);
     }
 
     /**

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div style="width: 350px; padding: 40px 30px; background-color: white; border-radius: 5px;">
+    <div class="loginPart" >
       <div style="text-align: center; font-size: 20px; margin-bottom: 40px; color: #006eff; font-weight: bold">欢迎使用</div>
       <el-form :model="form" :rules="rules" ref="formRef">
         <el-form-item prop="username">
@@ -73,6 +73,20 @@ export default {
   align-items: center;
   justify-content: center;
   color: #666;
+}
+.loginPart{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 50px;
+  background: rgba(238, 237, 237, 0.739);
+  box-sizing: border-box;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, .5);
+  /*边框阴影  水平阴影0 垂直阴影15px 模糊25px 颜色黑色透明度0.5*/
+  border-radius: 15px;
+  /*边框圆角，四个角均为15px*/
 }
 a {
   color: #2a60c9;

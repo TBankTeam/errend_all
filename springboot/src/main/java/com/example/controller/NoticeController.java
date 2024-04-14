@@ -1,12 +1,16 @@
 package com.example.controller;
 
 import com.example.common.Result;
-import com.example.entity.Notice;
-import com.example.service.NoticeService;
+import com.example.entity.*;
+import com.example.mapper.OrdersMapper;
+import com.example.service.*;
 import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.transaction.Transaction;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 公告信息表前端操作接口
@@ -17,6 +21,18 @@ public class NoticeController {
 
     @Resource
     private NoticeService noticeService;
+
+    @Resource
+    private OrdersMapper ordersMapper;
+
+    @Resource
+    private UserService userService;
+
+    @Resource
+    private CertificationService certificationService;
+
+    @Resource
+    private RecordsService recordsService;
 
     /**
      * 新增
@@ -81,6 +97,28 @@ public class NoticeController {
                              @RequestParam(defaultValue = "10") Integer pageSize) {
         PageInfo<Notice> page = noticeService.selectPage(notice, pageNum, pageSize);
         return Result.success(page);
+    }
+
+
+    @GetMapping("/getInfo")
+    public Result getInfo() {
+        List<User> userList = userService.selectAll(new User());
+        List<Orders> ordersList = ordersMapper.selectAll(new Orders());
+        List<Certification> certificationList = certificationService.selectAll(new Certification());
+        List<Records> recordsList = recordsService.selectAll(new Records());
+        Map<String,Integer> res = new HashMap<>();
+        Integer userNum = userList.size();
+        Integer orderNum = ordersList.size();
+        Integer certificationNum = certificationList.size();
+        Integer money = 0;
+        for (Records records : recordsList) {
+            money += records.getMoney();
+        }
+        res.put("userNum",userNum);
+        res.put("orderNum",orderNum);
+        res.put("certificationNum",certificationNum);
+        res.put("money",money);
+        return Result.success(res);
     }
 
 }

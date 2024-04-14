@@ -49,7 +49,7 @@ export default {
     }
   },
   created() {
-
+    this.user.password = "******"
   },
   methods: {
     update() {
