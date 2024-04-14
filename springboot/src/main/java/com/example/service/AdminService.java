@@ -130,10 +130,10 @@ public class AdminService {
         if (ObjectUtil.isNull(dbAdmin)) {
             throw new CustomException(ResultCodeEnum.USER_NOT_EXIST_ERROR);
         }
-        if (!account.getPassword().equals(dbAdmin.getPassword())) {
+        if (!passwordEncoder.matches(account.getPassword(), dbAdmin.getPassword())) {
             throw new CustomException(ResultCodeEnum.PARAM_PASSWORD_ERROR);
         }
-        dbAdmin.setPassword(account.getNewPassword());
+        dbAdmin.setPassword(passwordEncoder.encode(account.getNewPassword()));
         adminMapper.updateById(dbAdmin);
     }
 

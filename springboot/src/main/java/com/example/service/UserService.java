@@ -147,13 +147,5 @@ public class UserService {
         this.add(user);
     }
 
-//    public void charge(Double money) {
-//        Account currentUser = TokenUtils.getCurrentUser();
-//        currentUser.setAccount(currentUser.getAccount().add(BigDecimal.valueOf(money)));
-//        this.updateById((User) currentUser);
-//
-//        // 记录收支明细
-//        RecordsService.addRecord("充值", BigDecimal.valueOf(money), RecordsTypeEnum.CHARGE.getValue());
-//    }
 
 }
