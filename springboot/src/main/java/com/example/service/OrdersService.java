@@ -186,8 +186,36 @@ public class OrdersService {
                 int range = (int) DateUtil.between(DateUtil.parseDateTime(time), date, DateUnit.MINUTE);
                 order.setRange(range);
             }
-            ordersList.addAll(ordersList1);
-            ordersList.addAll(ordersList2);
+
+            ordersList.addAll(ordersList1.stream().filter(orders1 -> orders1.getStatus().equals("待确认"))
+                    .collect(Collectors.toList()));
+            ordersList.addAll(ordersList2.stream().filter(orders2 -> orders2.getStatus().equals("待确认"))
+                    .collect(Collectors.toList()));
+            ordersList.addAll(ordersList1.stream().filter(orders1 -> orders1.getStatus().equals("已接单"))
+                    .collect(Collectors.toList()));
+            ordersList.addAll(ordersList2.stream().filter(orders2 -> orders2.getStatus().equals("已接单"))
+                    .collect(Collectors.toList()));
+            ordersList.addAll(ordersList1.stream().filter(orders1 -> orders1.getStatus().equals("待接单"))
+                    .collect(Collectors.toList()));
+            ordersList.addAll(ordersList2.stream().filter(orders2 -> orders2.getStatus().equals("待接单"))
+                    .collect(Collectors.toList()));
+            ordersList.addAll(ordersList1.stream().filter(orders1 -> orders1.getStatus().equals("待审核"))
+                    .collect(Collectors.toList()));
+            ordersList.addAll(ordersList2.stream().filter(orders2 -> orders2.getStatus().equals("待审核"))
+                    .collect(Collectors.toList()));
+            ordersList.addAll(ordersList1.stream().filter(orders1 -> orders1.getStatus().equals("已取消"))
+                    .collect(Collectors.toList()));
+            ordersList.addAll(ordersList2.stream().filter(orders2 -> orders2.getStatus().equals("已取消"))
+                    .collect(Collectors.toList()));
+            ordersList.addAll(ordersList1.stream().filter(orders1 -> orders1.getStatus().equals("已完成"))
+                    .collect(Collectors.toList()));
+            ordersList.addAll(ordersList2.stream().filter(orders2 -> orders2.getStatus().equals("已完成"))
+                    .collect(Collectors.toList()));
+
+
+
+
+
         }else if (orders.getStatus().equals("待接单")){
             //生成推荐订单序列
             PythonUtils pythonRunner = new PythonUtils();

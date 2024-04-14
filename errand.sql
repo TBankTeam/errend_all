@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80030
 File Encoding         : 65001
 
-Date: 2024-04-12 12:29:52
+Date: 2024-04-14 11:25:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -79,7 +79,7 @@ CREATE TABLE `address` (
   `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '联系电话',
   `user_id` int DEFAULT NULL COMMENT '关联用户ID',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='联系人信息';
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='联系人信息';
 
 -- ----------------------------
 -- Records of address
@@ -95,6 +95,9 @@ INSERT INTO `address` VALUES ('13', '合肥西路', '1201号', '小雨', '139889
 INSERT INTO `address` VALUES ('15', 'dsa', 'das', 'dsa', 'dsa', '31');
 INSERT INTO `address` VALUES ('16', 'sf', 'gf', 'dgfd', 'gdf', '31');
 INSERT INTO `address` VALUES ('17', 'dz', 'mp', 'zl', '123', '32');
+INSERT INTO `address` VALUES ('18', '商店', '231', '123', '321', '32');
+INSERT INTO `address` VALUES ('19', 'dz', 'mph', 'lxr', '123', '34');
+INSERT INTO `address` VALUES ('20', '商店', '123', '321', '123', '34');
 
 -- ----------------------------
 -- Table structure for admin
@@ -115,7 +118,7 @@ CREATE TABLE `admin` (
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
-INSERT INTO `admin` VALUES ('1', 'admin', '$2a$10$LENHDWwWccAAVaeI.F/d0O0sMnVfowlObdqR2Uts1x0gQnoYuZDCG', '王大爷', 'http://localhost:9090/files/1697438073596-avatar.png', 'ADMIN', '13677889922', null);
+INSERT INTO `admin` VALUES ('1', 'admin', '$2a$10$m1lAnRhIKUNN9Yf8hx7FQOhqw0m97YN3EFUrdl9RDMoa4rWAz.aba', '王大爷', 'http://localhost:9090/files/1697438073596-avatar.png', 'ADMIN', '13677889922', null);
 INSERT INTO `admin` VALUES ('3', 'test', '$2a$10$LENHDWwWccAAVaeI.F/d0O0sMnVfowlObdqR2Uts1x0gQnoYuZDCG', 'test', 'http://localhost:9090/files/1710832789611-1700704030807-mT24qmNOwHzsd0c4ff9133bcb1b397eeedf9d5bc65e0.png', 'ADMIN', '123', null);
 INSERT INTO `admin` VALUES ('4', 'test2', '******', 'test2', 'http://localhost:9090/files/1710933709146-1700703916417-vj17JrViON0r99915b5d3c7d49851528fb541fada677.png', 'ADMIN', '123', null);
 INSERT INTO `admin` VALUES ('5', 'test3', '******', 'test3', 'http://localhost:9090/files/1710933720210-1700706315381-nQC2Fa5ufYXE76fda5dd9caa4d0a4037ec4dc7e157b7.png', 'ADMIN', '123', null);
@@ -158,7 +161,7 @@ CREATE TABLE `certification` (
   `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '待审核' COMMENT '审核状态',
   `reason` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '审核理由',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='认证信息';
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='认证信息';
 
 -- ----------------------------
 -- Records of certification
@@ -170,6 +173,7 @@ INSERT INTO `certification` VALUES ('15', '15', 'abc10', null, null, null, null,
 INSERT INTO `certification` VALUES ('16', '31', 'wanglaowu', null, null, null, null, null, null, '通过', null);
 INSERT INTO `certification` VALUES ('17', '2', 'lisi', null, '123123', '321321', null, null, '123', '通过', null);
 INSERT INTO `certification` VALUES ('19', '32', 'yq', 'http://localhost:9090/files/1712844727707-OiNbhSc5DwqIa211f268fcb5da6c99a805f8d86993fa.png', '123123', '361025195303020516', 'http://localhost:9090/files/1712844752227-vdrkP7JpoWlw33910d12706074886a41ea3f068e3653.png', 'http://localhost:9090/files/1712844754937-24o9EHeY0waE33910d12706074886a41ea3f068e3653.png', 'dz', '通过', null);
+INSERT INTO `certification` VALUES ('20', '34', 'haha', 'http://localhost:9090/files/1713001141496-ZZoCTEMjR8GD2e2d697a6d309d66be61b38c7730cebd.jpg', '123123', '361025195303020516', 'http://localhost:9090/files/1713001146099-2xtQ0rCkFnfsa211f268fcb5da6c99a805f8d86993fa.png', 'http://localhost:9090/files/1713001148392-WbA3ifkLBhxn33910d12706074886a41ea3f068e3653.png', 'ds', '通过', null);
 
 -- ----------------------------
 -- Table structure for comment
@@ -218,7 +222,7 @@ CREATE TABLE `evaluate` (
   `time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '时间',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `user_id` (`user_id`,`order_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='评价表';
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='评价表';
 
 -- ----------------------------
 -- Records of evaluate
@@ -229,7 +233,10 @@ INSERT INTO `evaluate` VALUES ('10', null, '4.0', '2', '31', '22', '2024-03-21 2
 INSERT INTO `evaluate` VALUES ('13', '好', '5.0', '31', '2', '29', '2024-03-21 20:30:15');
 INSERT INTO `evaluate` VALUES ('14', 'h', '5.0', '2', '31', '21', '2024-03-21 20:44:30');
 INSERT INTO `evaluate` VALUES ('16', '好', '5.0', '2', '31', '20', '2024-03-21 20:44:37');
-INSERT INTO `evaluate` VALUES ('17', 'dsa', '4.0', '32', '31', '30', '2024-04-11 22:55:22');
+INSERT INTO `evaluate` VALUES ('23', 'des', '5.0', '32', '31', '30', '2024-04-12 13:04:38');
+INSERT INTO `evaluate` VALUES ('24', null, '5.0', '32', '31', '32', '2024-04-13 17:21:31');
+INSERT INTO `evaluate` VALUES ('25', null, '5.0', '32', '31', '31', '2024-04-13 17:21:35');
+INSERT INTO `evaluate` VALUES ('32', null, '5.0', '34', '31', '38', '2024-04-13 20:14:49');
 
 -- ----------------------------
 -- Table structure for news
@@ -301,27 +308,37 @@ CREATE TABLE `orders` (
   `serve_time` datetime DEFAULT NULL COMMENT '服务时间',
   `time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '创建时间',
   `accept_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '接单时间',
+  `finish_time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '完成时间',
   `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '订单状态',
   `address_id` int DEFAULT NULL COMMENT '取货地址ID',
   `target_id` int DEFAULT NULL COMMENT '送货地址ID',
   `comment` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '订单备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='订单信息';
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='订单信息';
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
-INSERT INTO `orders` VALUES ('19', '1727868740552798208', '买包米', '买包米', 'http://localhost:9090/files/1700790978696-CxCguWQjx8nP7cd21a9de1f499f2a532d7b9cc928f02.png', null, '代拿物品', '0.10', '5', '31', null, '2023-11-24 09:56:24', '2023-11-24 09:56:24', null, '已取消', '8', '7', '热的');
-INSERT INTO `orders` VALUES ('20', '1727869169172959232', '扫地', '扫地', 'http://localhost:9090/files/1700791084963-fDmaVRxeLnGd203bfcffb7b80e708090cbdb8fcd671b.png', null, '打扫卫生', '0.20', '5', '2', '31', '2023-11-24 09:56:24', '2023-11-24 09:58:06', '2024-03-21 10:34:36', '已完成', '8', '7', null);
-INSERT INTO `orders` VALUES ('21', '1727873257063280640', '高奶奶很无聊，需要陪聊', '高奶奶很无聊，需要陪聊', 'http://localhost:9090/files/1700792058969-KrQtpRLTlh1y21b37635be9790fed814b1f298173089.png', null, '空巢老人陪聊', '0.10', '6', '2', '31', null, '2024-03-21 10:34:36', '2024-03-21 16:23:47', '已完成', '8', '7', '1');
-INSERT INTO `orders` VALUES ('22', '1727912858976935936', '擦玻璃', '擦玻璃', 'http://localhost:9090/files/1700801501337-qQNVRmk2Y2jeacb88604e05a527a2e8a5f348549ac51.png', null, '打扫卫生', '1.00', '5', '2', '31', null, '2023-11-24 12:51:43', '2023-11-24 12:51:50', '已完成', '8', '7', '1');
-INSERT INTO `orders` VALUES ('23', '1727914789656989696', '楼下买包烟', '楼下买包烟', 'http://localhost:9090/files/1700801931808-00cUgnNoLY2c7d94a44c7f66436ec4e45e0369e4b764.jpg', null, '代拿物品', '0.20', '10', '24', '1', null, '2023-11-24 12:59:23', '2023-11-24 12:59:40', '已取消', '12', '13', '我爱你小雨');
-INSERT INTO `orders` VALUES ('24', '1727915204498821120', '楼下买瓶酒', '楼下买瓶酒', 'http://localhost:9090/files/1700802061505-s6M2juhZRGhl650871f9e0db400e0e2b1329ca9049f4.png', null, '代拿物品', '1.00', '6', '31', null, null, '2023-11-24 13:01:02', null, '已取消', '13', '12', '11');
-INSERT INTO `orders` VALUES ('25', '1727915386980405248', '李奶奶很无聊，需要陪聊', '李奶奶很无聊，需要陪聊', 'http://localhost:9090/files/1700802104212-SMy1gIojSi61b96dd2c8e1b554ea99f00bf8d8f9e04d.jpg', null, '空巢老人陪聊', '2.00', '6', '24', '31', null, '2024-03-21 10:34:36', '2024-03-21 20:22:23', '已接单', '13', '12', '22');
-INSERT INTO `orders` VALUES ('26', '1770763093540904960', 'wp', 'des', null, null, '代拿物品', '1.20', '1', '31', null, null, '2024-03-21 18:43:15', null, '已取消', '16', '15', null);
-INSERT INTO `orders` VALUES ('27', '1770764854972424192', 'ww', 'des', null, null, '代拿快递', '11.00', '3', '31', null, null, '2024-03-21 18:50:15', null, '已取消', '16', '15', null);
-INSERT INTO `orders` VALUES ('29', '1770787696854216704', '德萨', '多少', null, null, '代拿快递', '1.00', '2', '31', '2', null, '2024-03-21 20:21:01', '2024-03-21 20:27:04', '已完成', '16', '15', null);
-INSERT INTO `orders` VALUES ('30', '0x729890bba0441b988b322058dd10b82122ef15f6', 'bt', 'des', null, 'http://localhost:9090/files/1712849070802-0x729890bba0441b988b322058dd10b82122ef15f6.png', '代买零食', '2.00', '0', '32', '31', null, '2024-04-11 22:13:46', '2024-04-11 22:54:54', '已完成', '16', '17', null);
+INSERT INTO `orders` VALUES ('19', '1727868740552798208', '买包米', '买包米', 'http://localhost:9090/files/1700790978696-CxCguWQjx8nP7cd21a9de1f499f2a532d7b9cc928f02.png', null, '代拿物品', '0.10', '5', '31', null, '2023-11-24 09:56:24', '2023-11-24 09:56:24', null, null, '已取消', '8', '7', '热的');
+INSERT INTO `orders` VALUES ('20', '1727869169172959232', '扫地', '扫地', 'http://localhost:9090/files/1700791084963-fDmaVRxeLnGd203bfcffb7b80e708090cbdb8fcd671b.png', null, '打扫卫生', '0.20', '5', '2', '31', '2023-11-24 09:56:24', '2023-11-24 09:58:06', '2024-03-21 10:34:36', null, '已完成', '8', '7', null);
+INSERT INTO `orders` VALUES ('21', '1727873257063280640', '高奶奶很无聊，需要陪聊', '高奶奶很无聊，需要陪聊', 'http://localhost:9090/files/1700792058969-KrQtpRLTlh1y21b37635be9790fed814b1f298173089.png', null, '空巢老人陪聊', '0.10', '6', '2', '31', null, '2024-03-21 10:34:36', '2024-03-21 16:23:47', null, '已完成', '8', '7', '1');
+INSERT INTO `orders` VALUES ('22', '1727912858976935936', '擦玻璃', '擦玻璃', 'http://localhost:9090/files/1700801501337-qQNVRmk2Y2jeacb88604e05a527a2e8a5f348549ac51.png', null, '打扫卫生', '1.00', '5', '2', '31', null, '2023-11-24 12:51:43', '2023-11-24 12:51:50', null, '已完成', '8', '7', '1');
+INSERT INTO `orders` VALUES ('23', '1727914789656989696', '楼下买包烟', '楼下买包烟', 'http://localhost:9090/files/1700801931808-00cUgnNoLY2c7d94a44c7f66436ec4e45e0369e4b764.jpg', null, '代拿物品', '0.20', '10', '24', '1', null, '2023-11-24 12:59:23', '2023-11-24 12:59:40', null, '已取消', '12', '13', '我爱你小雨');
+INSERT INTO `orders` VALUES ('24', '1727915204498821120', '楼下买瓶酒', '楼下买瓶酒', 'http://localhost:9090/files/1700802061505-s6M2juhZRGhl650871f9e0db400e0e2b1329ca9049f4.png', null, '代拿物品', '1.00', '6', '31', null, null, '2023-11-24 13:01:02', null, null, '已取消', '13', '12', '11');
+INSERT INTO `orders` VALUES ('25', '1727915386980405248', '李奶奶很无聊，需要陪聊', '李奶奶很无聊，需要陪聊', 'http://localhost:9090/files/1700802104212-SMy1gIojSi61b96dd2c8e1b554ea99f00bf8d8f9e04d.jpg', null, '空巢老人陪聊', '2.00', '6', '24', '31', null, '2024-03-21 10:34:36', '2024-03-21 20:22:23', null, '已接单', '13', '12', '22');
+INSERT INTO `orders` VALUES ('26', '1770763093540904960', 'wp', 'des', null, null, '代拿物品', '1.20', '1', '31', null, null, '2024-03-21 18:43:15', null, null, '已取消', '16', '15', null);
+INSERT INTO `orders` VALUES ('27', '1770764854972424192', 'ww', 'des', null, null, '代拿快递', '11.00', '3', '31', null, null, '2024-03-21 18:50:15', null, null, '已取消', '16', '15', null);
+INSERT INTO `orders` VALUES ('29', '1770787696854216704', '德萨', '多少', null, null, '代拿快递', '1.00', '2', '31', '2', null, '2024-03-21 20:21:01', '2024-03-21 20:27:04', null, '已完成', '16', '15', null);
+INSERT INTO `orders` VALUES ('30', '0x729890bba0441b988b322058dd10b82122ef15f6', 'bt', 'des', null, 'http://localhost:9090/files/1712898274660-0x729890bba0441b988b322058dd10b82122ef15f6.png', '代买零食', '2.00', '0', '32', '31', null, '2024-04-11 22:13:46', '2024-04-11 22:54:54', null, '已完成', '16', '17', null);
+INSERT INTO `orders` VALUES ('31', '0xfb10a5bcf790bf3cee7620ae00226bb778a89b33', '打扫卫生', '帮忙打扫卫生', null, 'http://localhost:9090/files/1713000094075-0xfb10a5bcf790bf3cee7620ae00226bb778a89b33.png', '家政服务', null, '3', '32', '31', null, '2024-04-13 16:51:41', '2024-04-13 17:21:13', null, '已完成', null, '17', null);
+INSERT INTO `orders` VALUES ('32', '0x846ee5ab39081ef125afd5df2e78aeaabd25db5b', '陪我聊聊天', '聊天', null, 'http://localhost:9090/files/1713000090972-0x846ee5ab39081ef125afd5df2e78aeaabd25db5b.png', '其他', null, '2', '32', '31', null, '2024-04-13 17:20:23', '2024-04-13 17:21:15', null, '已完成', null, '17', null);
+INSERT INTO `orders` VALUES ('33', '0xa7cb7e588989ee1c69e19843c917ad0c544ccf53', '陪我聊聊天', '来个人陪我聊聊天，我好无聊', null, null, '家政服务', null, '2', '32', null, null, '2024-04-13 17:25:12', null, null, '待接单', null, '17', null);
+INSERT INTO `orders` VALUES ('34', '0x8b7b307e03107544a6479181de045daca21e8dae', '看病', '我生病了，陪我去看病', null, null, '陪同看病', null, '3', '32', null, null, '2024-04-13 17:26:19', null, null, '待接单', null, '17', null);
+INSERT INTO `orders` VALUES ('35', '0x7634504d22dc88d93ece464bce15a20680837625', '买米', '家里米用完了，帮我买一包', null, null, '代买物品', null, '1', '32', null, null, '2024-04-13 17:27:14', null, null, '待接单', '18', '17', null);
+INSERT INTO `orders` VALUES ('36', '0xc65d520a7af17e8a26dd71ef909e6bdf019326a2', '买油', '家里油用完了', null, null, '代买物品', null, '1', '32', null, null, '2024-04-13 17:36:47', null, null, '待接单', '18', '17', null);
+INSERT INTO `orders` VALUES ('37', '0x40ee4d7e7f4dc9e11456afb3cac4f7ca4788370d', '聊聊天', '陪我聊聊天', null, null, '其他', null, '2', '34', null, null, '2024-04-13 17:40:55', null, null, '待接单', null, '19', null);
+INSERT INTO `orders` VALUES ('38', '0xa362469f3bb61c1f990f0208247567f4270e7d61', '看病', '我也病了', null, 'http://localhost:9090/files/1713058848691-证书编号：0xa362469f3bb61c1f990f0208247567f4270e7d61.png', '陪同看病', null, '3', '34', '31', null, '2024-04-13 17:42:42', '2024-04-13 19:58:41', '2024 年 4 月 14 日', '已完成', null, '19', null);
+INSERT INTO `orders` VALUES ('39', '0xbf2322d99abecbac1109f8538d2037282713f3fe', '买米', '家里米用完了，帮我买一包', null, null, '代买物品', null, '1', '34', null, null, '2024-04-13 17:43:53', null, null, '待接单', '20', '19', null);
 
 -- ----------------------------
 -- Table structure for records
@@ -336,7 +353,7 @@ CREATE TABLE `records` (
   `time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '时间',
   `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '类型',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='收支明细';
+) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='收支明细';
 
 -- ----------------------------
 -- Records of records
@@ -380,6 +397,48 @@ INSERT INTO `records` VALUES ('43', 'bt', '0', '32', '31', '2024-04-11 23:19:43'
 INSERT INTO `records` VALUES ('44', 'bt', '0', '32', '31', '2024-04-11 23:21:48', '服务');
 INSERT INTO `records` VALUES ('45', 'bt', '0', '32', '31', '2024-04-11 23:22:52', '服务');
 INSERT INTO `records` VALUES ('46', 'bt', '0', '32', '31', '2024-04-11 23:24:30', '服务');
+INSERT INTO `records` VALUES ('47', 'bt', '0', '32', '31', '2024-04-12 13:00:09', '服务');
+INSERT INTO `records` VALUES ('48', 'bt', '0', '32', '31', '2024-04-12 13:01:47', '服务');
+INSERT INTO `records` VALUES ('49', 'bt', '0', '32', '31', '2024-04-12 13:04:34', '服务');
+INSERT INTO `records` VALUES ('50', '陪我聊聊天', '2', '32', '31', '2024-04-13 17:21:30', '服务');
+INSERT INTO `records` VALUES ('51', '打扫卫生', '3', '32', '31', '2024-04-13 17:21:34', '服务');
+INSERT INTO `records` VALUES ('52', '审核发放', '70', '0', '34', '2024-04-13 17:39:45', '发放');
+INSERT INTO `records` VALUES ('53', '看病', '3', '34', '31', '2024-04-13 19:59:27', '服务');
+INSERT INTO `records` VALUES ('54', '看病', '3', '34', '31', '2024-04-13 20:03:00', '服务');
+INSERT INTO `records` VALUES ('55', '看病', '3', '34', '31', '2024-04-13 20:06:14', '服务');
+INSERT INTO `records` VALUES ('56', '看病', '3', '34', '31', '2024-04-13 20:08:46', '服务');
+INSERT INTO `records` VALUES ('57', '看病', '3', '34', '31', '2024-04-13 20:11:12', '服务');
+INSERT INTO `records` VALUES ('58', '看病', '3', '34', '31', '2024-04-13 20:13:02', '服务');
+INSERT INTO `records` VALUES ('59', '看病', '3', '34', '31', '2024-04-13 20:14:49', '服务');
+INSERT INTO `records` VALUES ('60', '看病', '3', '34', '31', '2024-04-13 20:19:19', '服务');
+INSERT INTO `records` VALUES ('61', '看病', '3', '34', '31', '2024-04-13 20:22:04', '服务');
+INSERT INTO `records` VALUES ('62', '看病', '3', '34', '31', '2024-04-13 20:52:08', '服务');
+INSERT INTO `records` VALUES ('63', '看病', '3', '34', '31', '2024-04-13 20:54:14', '服务');
+INSERT INTO `records` VALUES ('64', '看病', '3', '34', '31', '2024-04-13 20:55:39', '服务');
+INSERT INTO `records` VALUES ('65', '看病', '3', '34', '31', '2024-04-13 20:59:27', '服务');
+INSERT INTO `records` VALUES ('66', '看病', '3', '34', '31', '2024-04-13 21:02:09', '服务');
+INSERT INTO `records` VALUES ('67', '看病', '3', '34', '31', '2024-04-13 21:03:22', '服务');
+INSERT INTO `records` VALUES ('68', '看病', '3', '34', '31', '2024-04-13 21:08:29', '服务');
+INSERT INTO `records` VALUES ('69', '看病', '3', '34', '31', '2024-04-13 21:11:34', '服务');
+INSERT INTO `records` VALUES ('70', '看病', '3', '34', '31', '2024-04-13 21:14:25', '服务');
+INSERT INTO `records` VALUES ('71', '看病', '3', '34', '31', '2024-04-13 21:21:56', '服务');
+INSERT INTO `records` VALUES ('72', '看病', '3', '34', '31', '2024-04-13 21:35:31', '服务');
+INSERT INTO `records` VALUES ('73', '看病', '3', '34', '31', '2024-04-13 21:37:41', '服务');
+INSERT INTO `records` VALUES ('74', '看病', '3', '34', '31', '2024-04-13 21:38:39', '服务');
+INSERT INTO `records` VALUES ('75', '看病', '3', '34', '31', '2024-04-13 21:49:37', '服务');
+INSERT INTO `records` VALUES ('76', '看病', '3', '34', '31', '2024-04-13 21:54:15', '服务');
+INSERT INTO `records` VALUES ('77', '看病', '3', '34', '31', '2024-04-13 21:55:44', '服务');
+INSERT INTO `records` VALUES ('78', '看病', '3', '34', '31', '2024-04-13 21:56:33', '服务');
+INSERT INTO `records` VALUES ('79', '看病', '3', '34', '31', '2024-04-13 21:58:44', '服务');
+INSERT INTO `records` VALUES ('80', '看病', '3', '34', '31', '2024-04-13 22:01:08', '服务');
+INSERT INTO `records` VALUES ('81', '看病', '3', '34', '31', '2024-04-13 22:02:52', '服务');
+INSERT INTO `records` VALUES ('82', '看病', '3', '34', '31', '2024-04-13 22:10:13', '服务');
+INSERT INTO `records` VALUES ('83', '看病', '3', '34', '31', '2024-04-13 22:12:05', '服务');
+INSERT INTO `records` VALUES ('84', '看病', '3', '34', '31', '2024-04-13 22:13:41', '服务');
+INSERT INTO `records` VALUES ('85', '看病', '3', '34', '31', '2024-04-13 22:15:30', '服务');
+INSERT INTO `records` VALUES ('86', '看病', '3', '34', '31', '2024-04-13 22:16:34', '服务');
+INSERT INTO `records` VALUES ('87', '看病', '3', '34', '31', '2024-04-13 22:19:49', '服务');
+INSERT INTO `records` VALUES ('88', '看病', '3', '34', '31', '2024-04-14 09:40:48', '服务');
 
 -- ----------------------------
 -- Table structure for reserve
@@ -445,32 +504,33 @@ CREATE TABLE `user` (
   `weid` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'weid',
   `account` int DEFAULT '0' COMMENT '余额',
   `available_funds` int DEFAULT '0' COMMENT '可用资金',
+  `recommend_list` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '推荐订单序列',
   `register_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '注册时间',
   `login_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '登录时间',
   `update_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
   `status` tinyint DEFAULT NULL COMMENT '状态：1.正常 2.审核中 3.冻结 4.删除 5.审核未通过',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='用户表';
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'abc', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇', 'http://localhost:9090/files/1700709015974-2GLXt4Nzpr0T99915b5d3c7d49851528fb541fada677.png', 'USER', '65', '男', null, '13766775588', null, null, '50', null, '2024-03-19 21:31:19', '2024-03-19 21:31:19', '2024-03-19 21:31:19', '1');
-INSERT INTO `user` VALUES ('2', 'lisi', '$2a$10$PeRR/QbaXYKO04zLq4bbzOFx6yjTt8G8FGeilMlv2iN4z4JRuJHIS', '李四', 'http://localhost:9090/files/1710728549852-1699934583069-微信截图_20231018172208.png', 'USER', '74', '女', null, '123', null, null, '70', '70', '2024-03-21 20:45:17', '2024-03-21 20:45:17', '2024-03-21 20:45:17', '1');
-INSERT INTO `user` VALUES ('12', 'aaa7', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四7', 'http://localhost:9090/files/1710728549852-1699934583069-微信截图_20231018172208.png', 'USER', '74', '女', null, '123', null, null, '70', '70', '2024-03-20 20:24:48', '2024-03-20 20:24:48', '2024-03-20 20:24:48', '1');
-INSERT INTO `user` VALUES ('13', 'abc8', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇8', 'http://localhost:9090/files/1712842001036-1699934583069-微信截图_20231018172208.png', 'USER', '64', '男', '4321', '1234', null, null, '30', '30', '2024-03-20 20:24:35', '2024-03-20 20:24:35', '2024-04-11 21:26:47', '1');
-INSERT INTO `user` VALUES ('14', 'aaa9', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四9', null, 'USER', '59', '男', null, null, null, null, '0', null, '2024-03-19 21:29:33', '2024-03-19 21:29:33', '2024-03-24 15:54:44', '1');
-INSERT INTO `user` VALUES ('15', 'abc10', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇10', null, 'USER', '79', '男', null, null, null, null, '80', '80', '2024-03-20 20:25:03', '2024-03-20 20:25:03', '2024-03-20 20:25:03', '1');
-INSERT INTO `user` VALUES ('16', 'aaa11', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四11', null, 'USER', '80', ' 女', null, null, null, null, '120', '120', '2024-03-20 20:25:06', '2024-03-20 20:25:06', '2024-03-20 20:25:06', '1');
-INSERT INTO `user` VALUES ('17', 'abc12', '$2a$10$cMZTOVBbauCC7hEIC1LpVuz8va4SgkRW5LbvjJmjnwA2/LwHOzrCy', '王雨薇12', null, 'USER', null, '男', null, '123', null, null, '1000', null, '2024-03-19 20:43:17', '2024-03-19 20:33:09', '2024-03-19 20:43:17', '1');
-INSERT INTO `user` VALUES ('18', 'aaa13', '$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四13', null, 'USER', null, '男', null, '123', null, null, '1000', null, '2024-03-19 20:54:30', '2024-03-19 20:54:30', '2024-03-19 20:54:30', '1');
-INSERT INTO `user` VALUES ('19', 'abc14', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇14', null, 'USER', null, '女', null, null, null, null, '1000', null, '2024-04-10 21:13:48', '2024-04-10 21:13:48', '2024-04-10 21:13:48', '1');
-INSERT INTO `user` VALUES ('20', 'aaa15', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四15', null, 'USER', null, '男', null, null, null, null, '1000', null, '2024-04-10 21:13:51', '2024-04-10 21:13:51', '2024-04-10 21:13:51', '1');
-INSERT INTO `user` VALUES ('21', 'abc16', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇16', null, 'USER', null, '男', null, null, null, null, '1000', null, '2024-04-10 21:13:53', '2024-04-10 21:13:53', '2024-04-10 21:13:53', '1');
-INSERT INTO `user` VALUES ('22', 'abt', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', 'abt', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, null, null, null, null, null, '1000', null, '2024-03-19 20:01:39', '2024-03-19 20:01:39', '2024-03-19 20:01:39', '1');
-INSERT INTO `user` VALUES ('23', 'ccc', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', 'ccc', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, null, null, null, null, null, '1000', null, '2024-03-19 20:01:39', '2024-03-19 20:01:39', '2024-03-19 20:01:39', '1');
-INSERT INTO `user` VALUES ('24', 'ddd', '$2a$10$OzdrIw3C7f.JyLH.r9QqruUf8qJdOFIDkT0er4HOrOKsj4k/zZyO2', '李大爷', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, null, null, null, null, null, '10006', null, '2024-03-20 19:41:02', '2024-03-20 19:41:02', '2024-03-21 19:30:51', '1');
-INSERT INTO `user` VALUES ('29', 'test', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', 'test', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, '男', '4321', '1234', null, null, '0', '0', '2024-03-20 21:01:29', '2024-03-20 21:01:29', '2024-03-20 21:01:29', '2');
-INSERT INTO `user` VALUES ('30', 'haha', '$2a$10$9yfEpv0SFrQC/MLRTHespuBCIX07m1qU/yzLIE9Fy8jYxNPe6GFPy', 'haha', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, '女', '321321', '123123', null, null, '0', '0', '2024-03-19 15:57:28', null, '2024-03-19 15:57:28', '2');
-INSERT INTO `user` VALUES ('31', 'wanglaowu', '$2a$10$PeRR/QbaXYKO04zLq4bbzOFx6yjTt8G8FGeilMlv2iN4z4JRuJHIS', '王老五', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', '73', '男', '13888', '13666', '0xf592a5f36524261964048543c8736b9f1c94157e', null, '73', '73', '2024-04-11 23:10:01', '2024-04-11 23:10:01', '2024-04-11 23:24:30', '1');
-INSERT INTO `user` VALUES ('32', 'zhaoliu', '$2a$10$PeRR/QbaXYKO04zLq4bbzOFx6yjTt8G8FGeilMlv2iN4z4JRuJHIS', 'zhaoliu', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', '71', '男', null, null, '0xc05aec7a8e5e67254456535f69614389a76d1afe', 'did:weid:1000:0x5482ef8d0e0d08d2bd6d8e562d56d5712e334ddf', '67', '67', '2024-04-11 23:22:43', '2024-04-11 23:22:44', '2024-04-11 23:24:30', '1');
+INSERT INTO `user` VALUES ('1', 'abc', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇', 'http://localhost:9090/files/1700709015974-2GLXt4Nzpr0T99915b5d3c7d49851528fb541fada677.png', 'USER', '65', '男', null, '13766775588', null, null, '50', null, null, '2024-03-19 21:31:19', '2024-03-19 21:31:19', '2024-03-19 21:31:19', '1');
+INSERT INTO `user` VALUES ('2', 'lisi', '$2a$10$PeRR/QbaXYKO04zLq4bbzOFx6yjTt8G8FGeilMlv2iN4z4JRuJHIS', '李四', 'http://localhost:9090/files/1710728549852-1699934583069-微信截图_20231018172208.png', 'USER', '74', '女', null, '123', null, null, '70', '70', null, '2024-03-21 20:45:17', '2024-03-21 20:45:17', '2024-03-21 20:45:17', '1');
+INSERT INTO `user` VALUES ('12', 'aaa7', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四7', 'http://localhost:9090/files/1710728549852-1699934583069-微信截图_20231018172208.png', 'USER', '74', '女', null, '123', null, null, '70', '70', null, '2024-03-20 20:24:48', '2024-03-20 20:24:48', '2024-03-20 20:24:48', '1');
+INSERT INTO `user` VALUES ('13', 'abc8', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇8', 'http://localhost:9090/files/1712842001036-1699934583069-微信截图_20231018172208.png', 'USER', '64', '男', '4321', '1234', null, null, '30', '30', null, '2024-03-20 20:24:35', '2024-03-20 20:24:35', '2024-04-11 21:26:47', '1');
+INSERT INTO `user` VALUES ('14', 'aaa9', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四9', null, 'USER', '59', '男', null, null, null, null, '0', null, null, '2024-03-19 21:29:33', '2024-03-19 21:29:33', '2024-03-24 15:54:44', '1');
+INSERT INTO `user` VALUES ('15', 'abc10', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇10', null, 'USER', '79', '男', null, null, null, null, '80', '80', null, '2024-03-20 20:25:03', '2024-03-20 20:25:03', '2024-03-20 20:25:03', '1');
+INSERT INTO `user` VALUES ('16', 'aaa11', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四11', null, 'USER', '80', ' 女', null, null, null, null, '120', '120', null, '2024-03-20 20:25:06', '2024-03-20 20:25:06', '2024-03-20 20:25:06', '1');
+INSERT INTO `user` VALUES ('17', 'abc12', '$2a$10$cMZTOVBbauCC7hEIC1LpVuz8va4SgkRW5LbvjJmjnwA2/LwHOzrCy', '王雨薇12', null, 'USER', null, '男', null, '123', null, null, '1000', null, null, '2024-03-19 20:43:17', '2024-03-19 20:33:09', '2024-03-19 20:43:17', '1');
+INSERT INTO `user` VALUES ('18', 'aaa13', '$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四13', null, 'USER', null, '男', null, '123', null, null, '1000', null, null, '2024-03-19 20:54:30', '2024-03-19 20:54:30', '2024-03-19 20:54:30', '1');
+INSERT INTO `user` VALUES ('19', 'abc14', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇14', null, 'USER', null, '女', null, null, null, null, '1000', null, null, '2024-04-10 21:13:48', '2024-04-10 21:13:48', '2024-04-10 21:13:48', '1');
+INSERT INTO `user` VALUES ('20', 'aaa15', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '李四15', null, 'USER', null, '男', null, null, null, null, '1000', null, null, '2024-04-10 21:13:51', '2024-04-10 21:13:51', '2024-04-10 21:13:51', '1');
+INSERT INTO `user` VALUES ('21', 'abc16', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', '王雨薇16', null, 'USER', null, '男', null, null, null, null, '1000', null, null, '2024-04-10 21:13:53', '2024-04-10 21:13:53', '2024-04-10 21:13:53', '1');
+INSERT INTO `user` VALUES ('22', 'abt', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', 'abt', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, null, null, null, null, null, '1000', null, null, '2024-03-19 20:01:39', '2024-03-19 20:01:39', '2024-03-19 20:01:39', '1');
+INSERT INTO `user` VALUES ('23', 'ccc', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', 'ccc', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, null, null, null, null, null, '1000', null, null, '2024-03-19 20:01:39', '2024-03-19 20:01:39', '2024-03-19 20:01:39', '1');
+INSERT INTO `user` VALUES ('24', 'ddd', '$2a$10$OzdrIw3C7f.JyLH.r9QqruUf8qJdOFIDkT0er4HOrOKsj4k/zZyO2', '李大爷', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, null, null, null, null, null, '10006', null, null, '2024-03-20 19:41:02', '2024-03-20 19:41:02', '2024-03-21 19:30:51', '1');
+INSERT INTO `user` VALUES ('29', 'test', '$2a$10$72GVi62S8vBU8IjbIfwQr.HN42DFW8ZMTPrifiR/i0J8wuf8Q9Y4q', 'test', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', null, '男', '4321', '1234', null, null, '0', '0', null, '2024-03-20 21:01:29', '2024-03-20 21:01:29', '2024-03-20 21:01:29', '2');
+INSERT INTO `user` VALUES ('31', 'wanglaowu', '$2a$10$PeRR/QbaXYKO04zLq4bbzOFx6yjTt8G8FGeilMlv2iN4z4JRuJHIS', '王老五', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', '73', '男', '13888', '13666', '0xf592a5f36524261964048543c8736b9f1c94157e', null, '186', '186', '33,37,34,35,36,38,39', '2024-04-14 11:21:38', '2024-04-14 11:21:38', '2024-04-14 11:21:38', '1');
+INSERT INTO `user` VALUES ('32', 'zhaoliu', '$2a$10$PeRR/QbaXYKO04zLq4bbzOFx6yjTt8G8FGeilMlv2iN4z4JRuJHIS', 'zhaoliu', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', '71', '男', null, null, '0xc05aec7a8e5e67254456535f69614389a76d1afe', 'did:weid:1000:0x5482ef8d0e0d08d2bd6d8e562d56d5712e334ddf', '62', '55', '', '2024-04-13 19:59:06', '2024-04-13 19:59:07', '2024-04-13 19:59:06', '1');
+INSERT INTO `user` VALUES ('34', 'haha', '$2a$10$awIROpOZlFOopJO45CL0NOQjGgdwkqduQ2qkWvziOMaMiFnMzElCW', 'haha', 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png', 'USER', '71', '男', null, null, '0x67df635fafb1ec1ee6ff64ec2a4869ae295dcd47', 'did:weid:1000:0x3d79bbd9901e554fbd7a80720aca94645a1aea91', '25', '64', null, '2024-04-14 09:40:43', '2024-04-14 09:40:44', '2024-04-14 09:40:47', '1');
